@@ -1,0 +1,491 @@
+IQ-TREE 2.3.6 built Aug  4 2024
+
+Partition file name: multiply_fas/
+Type of analysis: ModelFinder + tree reconstruction + ultrafast bootstrap (1000 replicates)
+Random seed number: 163431
+
+REFERENCES
+----------
+
+To cite IQ-TREE please use:
+
+Bui Quang Minh, Heiko A. Schmidt, Olga Chernomor, Dominik Schrempf,
+Michael D. Woodhams, Arndt von Haeseler, and Robert Lanfear (2020)
+IQ-TREE 2: New models and efficient methods for phylogenetic inference
+in the genomic era. Mol. Biol. Evol., in press.
+https://doi.org/10.1093/molbev/msaa015
+
+To cite ModelFinder please use: 
+
+Subha Kalyaanamoorthy, Bui Quang Minh, Thomas KF Wong, Arndt von Haeseler,
+and Lars S Jermiin (2017) ModelFinder: Fast model selection for
+accurate phylogenetic estimates. Nature Methods, 14:587–589.
+https://doi.org/10.1038/nmeth.4285
+
+Since you used ultrafast bootstrap (UFBoot) please also cite: 
+
+Diep Thi Hoang, Olga Chernomor, Arndt von Haeseler, Bui Quang Minh,
+and Le Sy Vinh (2018) UFBoot2: Improving the ultrafast bootstrap
+approximation. Mol. Biol. Evol., 35:518–522.
+https://doi.org/10.1093/molbev/msx281
+
+Since you used partition models please also cite:
+
+Olga Chernomor, Arndt von Haeseler, and Bui Quang Minh (2016)
+Terrace aware data structure for phylogenomic inference from
+supermatrices. Syst. Biol., 65:997-1008.
+https://doi.org/10.1093/sysbio/syw037
+
+SEQUENCE ALIGNMENT
+------------------
+
+Input data: 83 taxa with 19 partitions and 25125 total sites (0% missing data)
+
+  ID	Type	Seq	Site	Unique	Infor	Invar	Const	Name
+   1	DNA	66	2148	33	14	2132	2132	Tb927.1.3230_mRNA_CDS_0.fas
+   2	DNA	66	627	15	8	617	617	Tb927.10.13980_mRNA_CDS_0.fas
+   3	DNA	66	3465	28	23	3439	3439	Tb927.10.15300_mRNA_CDS_0.fas
+   4	DNA	66	795	15	6	788	788	Tb927.10.1820_mRNA_CDS_0.fas
+   5	DNA	66	1017	20	11	1003	1003	Tb927.10.2810_mRNA_CDS_0.fas
+   6	DNA	66	1083	30	13	1060	1060	Tb927.10.4720_mRNA_CDS_0.fas
+   7	DNA	66	1395	15	7	1388	1388	Tb927.11.1940_mRNA_CDS_0.fas
+   8	DNA	66	1557	23	5	1551	1551	Tb927.11.3980_mRNA_CDS_0.fas
+   9	DNA	66	2325	23	7	2305	2305	Tb927.3.4350_mRNA_CDS_0.fas
+  10	DNA	66	1119	18	6	1105	1105	Tb927.4.980_mRNA_CDS_0.fas
+  11	DNA	66	567	19	7	560	560	Tb927.5.1220_mRNA_CDS_0.fas
+  12	DNA	66	1479	29	19	1453	1453	Tb927.6.1100_mRNA_CDS_0.fas
+  13	DNA	66	1320	30	11	1308	1308	Tb927.6.2630_mRNA_CDS_0.fas
+  14	DNA	66	831	24	9	811	811	Tb927.6.3660_mRNA_CDS_0.fas
+  15	DNA	66	1185	26	7	1177	1177	Tb927.6.5000_mRNA_CDS_0.fas
+  16	DNA	66	684	16	7	672	672	Tb927.7.6560_mRNA_CDS_0.fas
+  17	DNA	66	1827	44	23	1796	1796	Tb927.8.3480_mRNA_CDS_0.fas
+  18	DNA	66	1173	13	7	1164	1164	Tb927.8.3810_mRNA_CDS_0.fas
+  19	DNA	66	528	20	5	512	512	Tb927.9.10660_mRNA_CDS_0.fas
+
+Column meanings:
+  Unique: Number of unique site patterns
+  Infor:  Number of parsimony-informative sites
+  Invar:  Number of invariant sites
+  Const:  Number of constant sites (can be subset of invariant sites)
+
+ModelFinder
+-----------
+
+Best-fit model according to BIC: HKY+F+I:Tb927.1.3230_mRNA_CDS_0.fas,JC+I:Tb927.10.13980_mRNA_CDS_0.fas,K2P+I:Tb927.10.15300_mRNA_CDS_0.fas,K2P+I:Tb927.10.1820_mRNA_CDS_0.fas,JC+I:Tb927.10.2810_mRNA_CDS_0.fas,JC+I:Tb927.10.4720_mRNA_CDS_0.fas,K2P+I:Tb927.11.1940_mRNA_CDS_0.fas,K2P+I:Tb927.11.3980_mRNA_CDS_0.fas,JC+I:Tb927.3.4350_mRNA_CDS_0.fas,F81+F+I+G4:Tb927.4.980_mRNA_CDS_0.fas,JC:Tb927.5.1220_mRNA_CDS_0.fas,JC+I:Tb927.6.1100_mRNA_CDS_0.fas,K2P+I:Tb927.6.2630_mRNA_CDS_0.fas,JC+I+G4:Tb927.6.3660_mRNA_CDS_0.fas,F81+F+I:Tb927.6.5000_mRNA_CDS_0.fas,TPM3u+F+I:Tb927.7.6560_mRNA_CDS_0.fas,K2P:Tb927.8.3480_mRNA_CDS_0.fas,JC+I:Tb927.8.3810_mRNA_CDS_0.fas,K2P+I+G4:Tb927.9.10660_mRNA_CDS_0.fas
+
+List of best-fit models per partition:
+
+  ID  Model                  LogL         AIC      w-AIC        AICc     w-AICc         BIC      w-BIC
+   1  HKY+F+I           -3133.236    6278.472 + 6.95e-310    6278.511 + 6.95e-310    6312.506 + -2.08e+285
+   2  JC+I              -1014.828    2033.655 + 6.95e-310    2033.675 + 6.95e-310    2042.537 + -2.08e+285
+   3  K2P+I             -5059.744   10125.488 + 6.95e-310   10125.495 + 6.95e-310   10143.940 + -2.08e+285
+   4  K2P+I             -1178.387    2362.774 + 6.95e-310    2362.804 + 6.95e-310    2376.809 + -2.08e+285
+   5  JC+I              -1561.960    3127.919 + 6.95e-310    3127.931 + 6.95e-310    3137.769 + -2.08e+285
+   6  JC+I              -1863.819    3731.637 + 6.95e-310    3731.648 + 6.95e-310    3741.612 + -2.08e+285
+   7  K2P+I             -2025.866    4057.733 + 6.95e-310    4057.750 + 6.95e-310    4073.455 + -2.08e+285
+   8  K2P+I             -2231.995    4469.989 + 6.95e-310    4470.005 + 6.95e-310    4486.041 + -2.08e+285
+   9  JC+I              -3495.025    6994.051 + 6.95e-310    6994.056 + 6.95e-310    7005.553 + -2.08e+285
+  10  F81+F+I+G4        -1741.427    3494.855 + 6.95e-310    3494.930 + 6.95e-310    3524.976 + -2.08e+285
+  11  JC                 -852.370    1706.740 + 6.95e-310    1706.747 + 6.95e-310    1711.080 + -2.08e+285
+  12  JC+I              -2487.795    4979.590 + 6.95e-310    4979.599 + 6.95e-310    4990.189 + -2.08e+285
+  13  K2P+I             -1971.653    3949.306 + 6.95e-310    3949.324 + 6.95e-310    3964.862 + -2.08e+285
+  14  JC+I+G4           -1445.137    2896.275 + 6.95e-310    2896.304 + 6.95e-310    2910.443 + -2.08e+285
+  15  F81+F+I           -1729.855    3469.710 + 6.95e-310    3469.761 + 6.95e-310    3495.097 + -2.08e+285
+  16  TPM3u+F+I         -1108.260    2230.520 + 6.95e-310    2230.686 + 6.95e-310    2262.216 + -2.08e+285
+  17  K2P               -2830.308    5664.617 + 6.95e-310    5664.624 + 6.95e-310    5675.638 + -2.08e+285
+  18  JC+I              -1773.480    3550.960 + 6.95e-310    3550.970 + 6.95e-310    3561.094 + -2.08e+285
+  19  K2P+I+G4           -981.595    1971.190 + 6.95e-310    1971.266 + 6.95e-310    1988.266 + -2.08e+285
+
+AIC, w-AIC   : Akaike information criterion scores and weights.
+AICc, w-AICc : Corrected AIC scores and weights.
+BIC, w-BIC   : Bayesian information criterion scores and weights.
+
+Plus signs denote the 95% confidence sets.
+Minus signs denote significant exclusion.
+
+SUBSTITUTION PROCESS
+--------------------
+
+Edge-linked-proportional partition model with separate substitution models and separate rates across sites
+
+  ID  Model           Speed  Parameters
+   1  HKY+F+I        0.4538  HKY{10.075}+F{0.212064,0.254161,0.303967,0.229809}+I{0.987901}
+   2  JC+I           2.0138  JC+I{0.983084}
+   3  K2P+I          0.3314  K2P{13.8767}+FQ+I{0.969906}
+   4  K2P+I          0.4596  K2P{7.18324}+FQ+I{0.98132}
+   5  JC+I           0.6574  JC+I{0.962466}
+   6  JC+I           2.5403  JC+I{0.97746}
+   7  K2P+I          0.3167  K2P{9.79591}+FQ+I{0.992237}
+   8  K2P+I          0.3111  K2P{100}+FQ+I{0.994619}
+   9  JC+I           0.5188  JC+I{0.986125}
+  10  F81+F+I+G4     2.3343  F81+F{0.198967,0.218315,0.329497,0.253221}+I{0.968854}+G4{0.205243}
+  11  JC             0.4719  JC
+  12  JC+I           2.1607  JC+I{0.981381}
+  13  K2P+I          0.4251  K2P{12.3782}+FQ+I{0.972644}
+  14  JC+I+G4        2.7606  JC+I{0.942454}+G4{0.319111}
+  15  F81+F+I        0.4158  F81+F{0.27314,0.189657,0.296987,0.240217}+I{0.989394}
+  16  TPM3u+F+I      2.3876  TPM3u{0.0947754,0.0708084}+F{0.296274,0.190032,0.298915,0.214779}+I{0.979403}
+  17  K2P            0.6704  K2P{3.82491}+FQ
+  18  JC+I           0.6829  JC+I{0.990938}
+  19  K2P+I+G4       5.1889  K2P{0.195878}+FQ+I{0.931239}+G4{0.252974}
+
+MAXIMUM LIKELIHOOD TREE
+-----------------------
+
+Log-likelihood of the tree: -38450.8443 (s.e. 222.7307)
+Unconstrained log-likelihood (without tree): -37329.6946
+Number of free parameters (#branches + #model parameters): 189
+Akaike information criterion (AIC) score: 77279.6886
+Corrected Akaike information criterion (AICc) score: 77282.5689
+Bayesian information criterion (BIC) score: 78816.5645
+
+Total tree length (sum of branch lengths): 0.0263
+Sum of internal branch lengths: 0.0144 (54.8251% of tree length)
+
+WARNING: 24 near-zero internal branches (<0.0000) should be treated with caution
+         Such branches are denoted by '**' in the figure below
+
+NOTE: Tree is UNROOTED although outgroup taxon '108AT' is drawn at root
+Numbers in parentheses are  ultrafast bootstrap support (%)
+
++**108AT
+|
+|  +**108BT
++**| (32)
+|  +**15BT-relapse
+|
+|                                                              +**280104
+|                                                           +**| (18)
+|                                                           |  |  +**Canadian-Strain
+|                                                           |  +**| (38)
+|                                                           |     +**RoTat_1.2
+|                                                        +**| (33)
+|                                                        |  +**Kazakstan
+|                                                     +**| (16)
+|                                                     |  +**ATCC-30023
+|                                                  +**| (57)
+|                                                  |  +**ATCC-30019
+|                                               +**| (58)
+|                                               |  |  +**Philippines
+|                                               |  +--| (98)
+|                                               |     +**STIB805
+|                                            +--| (63)
+|                                            |  |  +**Kenya
+|                                            |  +--| (98)
+|                                            |     |     +**MCAM-ET-2013-MU-01
+|                                            |     |  +**| (56)
+|                                            |     |  |  +**MCAM-ET-2013-MU-02
+|                                            |     +**| (54)
+|                                            |        +**MCAM-ET-2013-MU-09
+|                                         +--| (99)
+|                                         |  |     +**Alfort
+|                                         |  |  +--| (98)
+|                                         |  |  |  +**HAMBURG
+|                                         |  +--| (96)
+|                                         |     |  +**AnTat-3-1
+|                                         |     +**| (61)
+|                                         |        |  +**AnTat-3-3
+|                                         |        +**| (42)
+|                                         |           |  +**Merzouga-56
+|                                         |           +--| (99)
+|                                         |              +**STIB-816
+|                                      +--| (83)
+|                                      |  |           +**ABBA
+|                                      |  |        +--| (100)
+|                                      |  |        |  +**LIGO
+|                                      |  |     +--| (59)
+|                                      |  |     |  +--MBOT-GM-77-GB2
+|                                      |  |  +--| (34)
+|                                      |  |  |  |  +--AGAL-CI-78-TCH312
+|                                      |  |  |  +--| (42)
+|                                      |  |  |     |     +--GPAP-CI-82-KP10-29
+|                                      |  |  |     |  +--| (63)
+|                                      |  |  |     |  |  |  +--MCAP-CI-91-BALEA-2
+|                                      |  |  |     |  |  +--| (68)
+|                                      |  |  |     |  |     +**MSUS-CI-78-TSW382
+|                                      |  |  |     +--| (71)
+|                                      |  |  |        +**MSUS-CI-82-TSW62
+|                                      |  +**| (54)
+|                                      |     |  +--MSUS-CI-83-TSW-11
+|                                      |     +--| (70)
+|                                      |        +--STIB386
+|                                   +--| (61)
+|                                   |  |  +--IVMt1
+|                                   |  +--| (99)
+|                                   |     |  +**MCAM-ET-2013-MU-14
+|                                   |     +--| (100)
+|                                   |        +**MU10
+|                                +--| (75)
+|                                |  |             +----927
+|                                |  |          +--| (100)
+|                                |  |          |  +**STIB247
+|                                |  |       +--| (52)
+|                                |  |       |  |                                                +**940
+|                                |  |       |  |                                             +**| (63)
+|                                |  |       |  |                                             |  +**OVI
+|                                |  |       |  |                                      +------| (100)
+|                                |  |       |  |                                      |      +**Dodola_943
+|                                |  |       |  |                    +-----------------| (100)
+|                                |  |       |  |                    |                 |   +**BoTat-1-1
+|                                |  |       |  |                    |                 +---| (100)
+|                                |  |       |  |                    |                     +**E28
+|                                |  |       |  |            +-------| (98)
+|                                |  |       |  |            |       +--GMOM-ZM-83-TRPZ-317
+|                                |  |       |  |         +--| (99)
+|                                |  |       |  |         |  |     +--AnTat-12-1S
+|                                |  |       |  |         |  |  +--| (43)
+|                                |  |       |  |         |  |  |  +--Rumphi
+|                                |  |       |  |         |  +--| (99)
+|                                |  |       |  |         |     |  +--MHOM-ZM-80-TRPZ-23
+|                                |  |       |  |         |     +--| (61)
+|                                |  |       |  |         |        |  +--MHOM-ZM-83-TRPZ-349
+|                                |  |       |  |         |        +**| (6)
+|                                |  |       |  |         |           +--STIB900
+|                                |  |       |  |     +---| (99)
+|                                |  |       |  |     |   +--UPA_PO
+|                                |  |       |  |  +--| (76)
+|                                |  |       |  |  |  +**EATRO2340
+|                                |  |       |  +--| (54)
+|                                |  |       |     |  +**EATRO3
+|                                |  |       |     +**| (48)
+|                                |  |       |        |  +------MHOM-SD-82-BIYAMINA
+|                                |  |       |        +--| (62)
+|                                |  |       |           +**STIB-851
+|                                |  +-------| (100)
+|                                |          |  +**FEO
+|                                |          +--| (99)
+|                                |             +**FEO-AnTat-16-1
+|                             +--| (100)
+|                             |  +-----MBO-NG-74-R10
+|                          +**| (48)
+|                          |  +--LiTat-1-5-P9
+|                       +**| (27)
+|                       |  +**ROUPO-VAVOUA--80-MURAZ-14
+|                    +--| (77)
+|                    |  +**OUSOU
+|                 +**| (13)
+|                 |  +**Nabe
+|              +**| (4)
+|              |  +**MBA
+|           +**| (12)
+|           |  +**MHOM-SD-82-MUSIKIA-cloneA
+|        +**| (14)
+|        |  |  +**NDMI
+|        |  +--| (98)
+|        |     +**NKOUA
+|     +**| (29)
+|     |  +**BIM-AnTat-8-1-P8
+|  +**| (52)
+|  |  +**LOGRA
++**| (60)
+   +**Bosendja
+
+Tree in newick format:
+
+(108AT:0.0000010012,(108BT:0.0000010012,15BT-relapse:0.0000010012)32:0.0000010012,(((((((((((((((((((((280104:0.0000010012,(Canadian-Strain:0.0000332602,RoTat_1.2:0.0000010012)38:0.0000010012)18:0.0000010012,Kazakstan:0.0000010012)33:0.0000010012,ATCC-30023:0.0000010012)16:0.0000010012,ATCC-30019:0.0000010012)57:0.0000054107,(Philippines:0.0000010012,STIB805:0.0000010012)98:0.0000425038)58:0.0000022957,(Kenya:0.0000023471,((MCAM-ET-2013-MU-01:0.0000010012,MCAM-ET-2013-MU-02:0.0000010012)56:0.0000010012,MCAM-ET-2013-MU-09:0.0000010012)54:0.0000020383)98:0.0000424802)63:0.0000398915,((Alfort:0.0000010012,HAMBURG:0.0000010012)98:0.0000434166,(AnTat-3-1:0.0000010012,(AnTat-3-3:0.0000010012,(Merzouga-56:0.0000010012,STIB-816:0.0000010012)99:0.0000424313)42:0.0000010012)61:0.0000010012)96:0.0000426809)99:0.0001324944,((((ABBA:0.0000010012,LIGO:0.0000010012)100:0.0002944445,MBOT-GM-77-GB2:0.0001443895)59:0.0001285214,(AGAL-CI-78-TCH312:0.0003501497,((GPAP-CI-82-KP10-29:0.0000897445,(MCAP-CI-91-BALEA-2:0.0002640797,MSUS-CI-78-TSW382:0.0000010012)68:0.0001766671)63:0.0001739181,MSUS-CI-82-TSW62:0.0000022447)71:0.0002605114)42:0.0001692567)34:0.0000968692,(MSUS-CI-83-TSW-11:0.0002537786,STIB386:0.0003015786)70:0.0003344145)54:0.0000020569)83:0.0002634373,(IVMt1:0.0003588405,(MCAM-ET-2013-MU-14:0.0000010012,MU10:0.0000010012)100:0.0003213358)99:0.0005180638)61:0.0000526549,(((927:0.0010787370,STIB247:0.0000010012)100:0.0007632766,((((((((940:0.0000010012,OVI:0.0000010012)63:0.0000028302,Dodola_943:0.0000020219)100:0.0014125989,(BoTat-1-1:0.0000010012,E28:0.0000010012)100:0.0009698615)100:0.0036845919,GMOM-ZM-83-TRPZ-317:0.0006324969)98:0.0017297064,((AnTat-12-1S:0.0005229595,Rumphi:0.0003332015)43:0.0000578901,(MHOM-ZM-80-TRPZ-23:0.0003096822,(MHOM-ZM-83-TRPZ-349:0.0003472407,STIB900:0.0003500377)6:0.0000021695)61:0.0000622795)99:0.0005095979)99:0.0007384114,UPA_PO:0.0002679198)99:0.0009744552,EATRO2340:0.0000025135)76:0.0000502255,(EATRO3:0.0000010012,(MHOM-SD-82-BIYAMINA:0.0013931578,STIB-851:0.0000025576)62:0.0002118863)48:0.0000025729)54:0.0004719568)52:0.0002915189,(FEO:0.0000010012,FEO-AnTat-16-1:0.0000010012)99:0.0002912866)100:0.0017288891)75:0.0001598269,MBO-NG-74-R10:0.0012208852)100:0.0004900194,LiTat-1-5-P9:0.0000423385)48:0.0000010012,ROUPO-VAVOUA--80-MURAZ-14:0.0000010012)27:0.0000010012,OUSOU:0.0000010012)77:0.0000506695,Nabe:0.0000010012)13:0.0000023027,MBA:0.0000010012)4:0.0000010012,MHOM-SD-82-MUSIKIA-cloneA:0.0000010012)12:0.0000010012,(NDMI:0.0000010012,NKOUA:0.0000010012)98:0.0000423858)14:0.0000020660,BIM-AnTat-8-1-P8:0.0000010012)29:0.0000010012,LOGRA:0.0000010012)52:0.0000010012,Bosendja:0.0000010012)60:0.0000020518);
+
+CONSENSUS TREE
+--------------
+
+Consensus tree is constructed from 1000 bootstrap trees
+Log-likelihood of consensus tree: -38453.528941
+Robinson-Foulds distance between ML tree and consensus tree: 18
+
+Branches with support >0.000000% are kept (extended consensus)
+Branch lengths are optimized by maximum likelihood on original alignment
+Numbers in parentheses are bootstrap supports (%)
+
++--108AT
+|
+|              +**108BT
+|           +**|
+|           |  +**Jua
+|        +**|
+|        |  +**57AT
+|     +**|
+|     |  +**348BT
+|  +--|
+|  |  +**340AT
++--| (32)
+|  +--15BT-relapse
+|
+|                                                        +--280104
+|                                                     +--| (33)
+|                                                     |  |     +--Canadian-Strain
+|                                                     |  |  +--| (38)
+|                                                     |  |  |  +--RoTat_1.2
+|                                                     |  +--| (19)
+|                                                     |     +--Kazakstan
+|                                                  +--| (57)
+|                                                  |  |           +**ATCC-30019
+|                                                  |  |        +**|
+|                                                  |  |        |  +**STIB818
+|                                                  |  |     +**|
+|                                                  |  |     |  +**ATCC30019
+|                                                  |  |  +--|
+|                                                  |  |  |  +**American-Strain
+|                                                  |  +--| (25)
+|                                                  |     +--ATCC-30023
+|                                               +--| (58)
+|                                               |  |  +--Philippines
+|                                               |  +--| (98)
+|                                               |     +--STIB805
+|                                            +--| (63)
+|                                            |  |     +**Kenya
+|                                            |  |  +--|
+|                                            |  |  |  +**MU09
+|                                            |  +--| (98)
+|                                            |     |              +**MCAM-ET-2013-MU-01
+|                                            |     |           +**|
+|                                            |     |           |  +**MCAM-ET-2013-MU-04
+|                                            |     |        +**|
+|                                            |     |        |  +**MCAM-ET-2013-MU-17
+|                                            |     |     +--|
+|                                            |     |     |  +**MCAM-ET-2013-MU-05
+|                                            |     |  +--| (56)
+|                                            |     |  |  +--MCAM-ET-2013-MU-02
+|                                            |     +--| (54)
+|                                            |        +--MCAM-ET-2013-MU-09
+|                                         +--| (99)
+|                                         |  |           +**Alfort
+|                                         |  |        +**|
+|                                         |  |        |  +**SVP
+|                                         |  |     +--|
+|                                         |  |     |  +**Zagora-I-17
+|                                         |  |  +--| (98)
+|                                         |  |  |  +--HAMBURG
+|                                         |  +--| (96)
+|                                         |     |     +**AnTat-3-1
+|                                         |     |  +--|
+|                                         |     |  |  +**Colombia
+|                                         |     +--| (61)
+|                                         |        |  +--AnTat-3-3
+|                                         |        +--| (42)
+|                                         |           |  +--Merzouga-56
+|                                         |           +--| (99)
+|                                         |              +--STIB-816
+|                                      +--| (83)
+|                                      |  |              +**ABBA
+|                                      |  |           +--|
+|                                      |  |           |  +**MSUS-CI-78-TSW-157
+|                                      |  |        +--| (100)
+|                                      |  |        |  +--LIGO
+|                                      |  |     +--| (59)
+|                                      |  |     |  +--MBOT-GM-77-GB2
+|                                      |  |  +--| (34)
+|                                      |  |  |  |  +--AGAL-CI-78-TCH312
+|                                      |  |  |  +--| (42)
+|                                      |  |  |     |     +--GPAP-CI-82-KP10-29
+|                                      |  |  |     |  +--| (63)
+|                                      |  |  |     |  |  |  +--MCAP-CI-91-BALEA-2
+|                                      |  |  |     |  |  +--| (68)
+|                                      |  |  |     |  |     +--MSUS-CI-78-TSW382
+|                                      |  |  |     +--| (71)
+|                                      |  |  |        +--MSUS-CI-82-TSW62
+|                                      |  +--| (54)
+|                                      |     |  +--MSUS-CI-83-TSW-11
+|                                      |     +--| (70)
+|                                      |        +--STIB386
+|                                   +--| (61)
+|                                   |  |  +--IVMt1
+|                                   |  +--| (99)
+|                                   |     |  +--MCAM-ET-2013-MU-14
+|                                   |     +--| (100)
+|                                   |        +--MU10
+|                                +--| (75)
+|                                |  |             +----927
+|                                |  |          +--| (100)
+|                                |  |          |  +--STIB247
+|                                |  |       +--| (52)
+|                                |  |       |  |                                                     +**940
+|                                |  |       |  |                                                  +--|
+|                                |  |       |  |                                                  |  +**Te-Ap-N-D1
+|                                |  |       |  |                                               +--| (63)
+|                                |  |       |  |                                               |  +--OVI
+|                                |  |       |  |                                        +------| (100)
+|                                |  |       |  |                                        |      +--Dodola_943
+|                                |  |       |  |                     +------------------| (100)
+|                                |  |       |  |                     |                  |   +--BoTat-1-1
+|                                |  |       |  |                     |                  +---| (100)
+|                                |  |       |  |                     |                      +--E28
+|                                |  |       |  |             +-------| (98)
+|                                |  |       |  |             |       +--GMOM-ZM-83-TRPZ-317
+|                                |  |       |  |          +--| (99)
+|                                |  |       |  |          |  |  +--AnTat-12-1S
+|                                |  |       |  |          |  +--| (99)
+|                                |  |       |  |          |     |        +--MHOM-ZM-80-TRPZ-23
+|                                |  |       |  |          |     |     +--| (58)
+|                                |  |       |  |          |     |     |  +--STIB900
+|                                |  |       |  |          |     |  +--| (61)
+|                                |  |       |  |          |     |  |  +--MHOM-ZM-83-TRPZ-349
+|                                |  |       |  |          |     +--| (46)
+|                                |  |       |  |          |        +--Rumphi
+|                                |  |       |  |     +----| (99)
+|                                |  |       |  |     |    +--UPA_PO
+|                                |  |       |  |  +--| (76)
+|                                |  |       |  |  |  +--EATRO2340
+|                                |  |       |  +--| (54)
+|                                |  |       |     |  +--EATRO3
+|                                |  |       |     +--| (48)
+|                                |  |       |        |  +------MHOM-SD-82-BIYAMINA
+|                                |  |       |        +--| (62)
+|                                |  |       |           +--STIB-851
+|                                |  +-------| (100)
+|                                |          |  +--FEO
+|                                |          +--| (99)
+|                                |             +--FEO-AnTat-16-1
+|                             +--| (100)
+|                             |  +-----MBO-NG-74-R10
+|                          +--| (48)
+|                          |  +--LiTat-1-5-P9
+|                       +--| (31)
+|                       |  +--OUSOU
+|                    +--| (77)
+|                    |  +--ROUPO-VAVOUA--80-MURAZ-14
+|                 +--| (22)
+|                 |  |  +--NDMI
+|                 |  +--| (98)
+|                 |     +--NKOUA
+|              +--| (14)
+|              |  +--Nabe
+|           +--| (9)
+|           |  +--BIM-AnTat-8-1-P8
+|        +--| (18)
+|        |  +--MBA
+|     +--| (29)
+|     |  |  +**MHOM-SD-82-MUSIKIA-cloneA
+|     |  +--|
+|     |     +**Pakwa
+|  +--| (52)
+|  |  +--LOGRA
++--| (60)
+   +--Bosendja
+
+
+Consensus tree in newick format: 
+
+(108AT:0.0000024768,(((((108BT:0.0000000000,Jua:0.0000000000):0.0000000000,57AT:0.0000000000):0.0000000000,348BT:0.0000000000):0.0000000000,340AT:0.0000000000):0.0000024768,15BT-relapse:0.0000024768)32:0.0000024768,(((((((((((((((((((280104:0.0000024768,((Canadian-Strain:0.0000329360,RoTat_1.2:0.0000024768)38:0.0000024768,Kazakstan:0.0000024768)19:0.0000024768)33:0.0000024768,((((ATCC-30019:0.0000000000,STIB818:0.0000000000):0.0000000000,ATCC30019:0.0000000000):0.0000000000,American-Strain:0.0000000000):0.0000024768,ATCC-30023:0.0000024768)25:0.0000024768)57:0.0000024768,(Philippines:0.0000024768,STIB805:0.0000024768)98:0.0000429156)58:0.0000359953,((Kenya:0.0000000000,MU09:0.0000000000):0.0000024768,(((((MCAM-ET-2013-MU-01:0.0000000000,MCAM-ET-2013-MU-04:0.0000000000):0.0000000000,MCAM-ET-2013-MU-17:0.0000000000):0.0000000000,MCAM-ET-2013-MU-05:0.0000000000):0.0000024768,MCAM-ET-2013-MU-02:0.0000024768)56:0.0000024768,MCAM-ET-2013-MU-09:0.0000024768)54:0.0000024768)98:0.0000430054)63:0.0000063733,((((Alfort:0.0000000000,SVP:0.0000000000):0.0000000000,Zagora-I-17:0.0000000000):0.0000024768,HAMBURG:0.0000024768)98:0.0000428709,((AnTat-3-1:0.0000000000,Colombia:0.0000000000):0.0000024768,(AnTat-3-3:0.0000024768,(Merzouga-56:0.0000024768,STIB-816:0.0000024768)99:0.0000431311)42:0.0000024768)61:0.0000024768)96:0.0000430556)99:0.0001342934,(((((ABBA:0.0000000000,MSUS-CI-78-TSW-157:0.0000000000):0.0000024768,LIGO:0.0000024768)100:0.0002949605,MBOT-GM-77-GB2:0.0001454402)59:0.0001278209,(AGAL-CI-78-TCH312:0.0003509604,((GPAP-CI-82-KP10-29:0.0000909966,(MCAP-CI-91-BALEA-2:0.0002643709,MSUS-CI-78-TSW382:0.0000024768)68:0.0001769407)63:0.0001740132,MSUS-CI-82-TSW62:0.0000024768)71:0.0002612080)42:0.0001687869)34:0.0000976670,(MSUS-CI-83-TSW-11:0.0002535449,STIB386:0.0003012000)70:0.0003341552)54:0.0000025546)83:0.0002631192,(IVMt1:0.0003585740,(MCAM-ET-2013-MU-14:0.0000024768,MU10:0.0000024768)100:0.0003207748)99:0.0005177226)61:0.0000537625,(((927:0.0010791030,STIB247:0.0000025547)100:0.0007637949,(((((((((940:0.0000000000,Te-Ap-N-D1:0.0000000000):0.0000024768,OVI:0.0000024768)63:0.0000024768,Dodola_943:0.0000024768)100:0.0014173075,(BoTat-1-1:0.0000024768,E28:0.0000024768)100:0.0009654585)100:0.0037807480,GMOM-ZM-83-TRPZ-317:0.0006134055)98:0.0015995904,(AnTat-12-1S:0.0004207583,(((MHOM-ZM-80-TRPZ-23:0.0003237284,STIB900:0.0003391629)58:0.0000024768,MHOM-ZM-83-TRPZ-349:0.0003461945)61:0.0000692985,Rumphi:0.0003635114)46:0.0001563799)99:0.0004304537)99:0.0007204567,UPA_PO:0.0002609112)99:0.0009836966,EATRO2340:0.0000024768)76:0.0000508607,(EATRO3:0.0000024768,(MHOM-SD-82-BIYAMINA:0.0013933457,STIB-851:0.0000026325)62:0.0002115786)48:0.0000022911)54:0.0004723508)52:0.0002914814,(FEO:0.0000024768,FEO-AnTat-16-1:0.0000024768)99:0.0002899718)100:0.0017308135)75:0.0001586017,MBO-NG-74-R10:0.0012200326)100:0.0004878332,LiTat-1-5-P9:0.0000428684)48:0.0000025546,OUSOU:0.0000024768)31:0.0000025546,ROUPO-VAVOUA--80-MURAZ-14:0.0000024768)77:0.0000502916,(NDMI:0.0000024768,NKOUA:0.0000024768)98:0.0000428345)22:0.0000025546,Nabe:0.0000024768)14:0.0000025546,BIM-AnTat-8-1-P8:0.0000024768)9:0.0000025546,MBA:0.0000024768)18:0.0000025546,(MHOM-SD-82-MUSIKIA-cloneA:0.0000000000,Pakwa:0.0000000000):0.0000024768)29:0.0000025546,LOGRA:0.0000024768)52:0.0000025546,Bosendja:0.0000024768)60:0.0000025546);
+
+ALISIM COMMAND
+--------------
+To simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis, you can use the following command:
+
+--alisim simulated_MSA -t multipl_concat.treefile -p multipl_concat.best_model.nex
+
+To mimic the alignment used to produce this analysis, i.e. simulate an alignment of the same length as the original alignment, using the tree and model parameters estimated from this analysis *and* copying the same gap positions as the original alignment, you can use the following command:
+
+iqtree -s <alignment.phy> --alisim mimicked_MSA
+
+To simulate any number of alignments in either of the two commandlines above, use the --num-alignments options, for example mimic 100 alignments you would use the command line:
+
+iqtree -s <alignment.phy> --alisim mimicked_MSA --num-alignments 100
+
+For more information on using AliSim, please visit: www.iqtree.org/doc/AliSim
+
+TIME STAMP
+----------
+
+Date and time: Wed Dec  4 13:49:03 2024
+Total CPU time used: 206.105783 seconds (0h:3m:26s)
+Total wall-clock time used: 68.75935984 seconds (0h:1m:8s)
+
