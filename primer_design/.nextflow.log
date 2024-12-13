@@ -1,0 +1,377 @@
+Dec-13 15:31:58.695 [main] DEBUG nextflow.cli.Launcher - $> nextflow run epi2me-labs/wf-amplicon --fastq /Volumes/matthews/Guy/Raw_data/cobalt/genome/nanopore_cow/EOX_908_12_190623.fastq.gz --reference targets.fasta --override_basecaller_cfg dna_r10.4.1_e8.2_400bps_sup@v5.0.0 --reads_downsampling_size 100000
+Dec-13 15:31:58.786 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.10.0
+Dec-13 15:31:58.809 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/goldriev/.nextflow/plugins; core-plugins: nf-amazon@2.9.0,nf-azure@1.10.1,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.15.2,nf-tower@1.9.3,nf-wave@1.7.2
+Dec-13 15:31:58.828 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Dec-13 15:31:58.829 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Dec-13 15:31:58.832 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Dec-13 15:31:58.847 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Dec-13 15:31:58.859 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /Users/goldriev/.nextflow/scm
+Dec-13 15:31:59.199 [main] DEBUG nextflow.scm.ProviderConfig - Detected SCM config: [providers:[github:[user:goldrieve, password:ghp****]]]
+Dec-13 15:31:59.215 [main] DEBUG nextflow.scm.RepositoryFactory - Found Git repository result: [RepositoryFactory]
+Dec-13 15:31:59.464 [main] DEBUG nextflow.scm.AssetManager - Git config: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/.git/config; branch: null; remote: origin; url: https://github.com/epi2me-labs/wf-amplicon.git
+Dec-13 15:31:59.481 [main] DEBUG nextflow.scm.AssetManager - Git config: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/.git/config; branch: null; remote: origin; url: https://github.com/epi2me-labs/wf-amplicon.git
+Dec-13 15:32:00.120 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/nextflow.config
+Dec-13 15:32:00.122 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/nextflow.config
+Dec-13 15:32:00.127 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/goldriev/.nextflow/secrets/store.json
+Dec-13 15:32:00.129 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@b5aa65b] - activable => nextflow.secret.LocalSecretsProvider@b5aa65b
+Dec-13 15:32:00.137 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Dec-13 15:32:00.251 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+Dec-13 15:32:00.251 [main] DEBUG nextflow.cli.CmdRun - Launching `https://github.com/epi2me-labs/wf-amplicon` [boring_moriondo] DSL2 - revision: 1cf4682471 [master]
+Dec-13 15:32:00.252 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Dec-13 15:32:00.253 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Dec-13 15:32:00.299 [main] DEBUG nextflow.Session - Session UUID: a7ebabaf-cdd1-488a-ac77-97548ca3106a
+Dec-13 15:32:00.299 [main] DEBUG nextflow.Session - Run name: boring_moriondo
+Dec-13 15:32:00.299 [main] DEBUG nextflow.Session - Executor pool size: 16
+Dec-13 15:32:00.307 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Dec-13 15:32:00.311 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=48; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Dec-13 15:32:00.329 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 24.10.0 build 5928
+  Created: 27-10-2024 18:36 UTC (18:36 BST)
+  System: Mac OS X 14.7.1
+  Runtime: Groovy 4.0.23 on OpenJDK 64-Bit Server VM 11.0.13+7-b1751.21
+  Encoding: UTF-8 (UTF-8)
+  Process: 17514@sce-bio-c05389.bio.ed.ac.uk [129.215.170.47]
+  CPUs: 16 - Mem: 64 GB (4.8 GB) - Swap: 2 GB (1.6 GB)
+Dec-13 15:32:00.348 [main] DEBUG nextflow.Session - Work-dir: /Users/goldriev/mono-trac/primer_design/work [Mac OS X]
+Dec-13 15:32:00.374 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Dec-13 15:32:00.382 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Dec-13 15:32:00.428 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Dec-13 15:32:00.436 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 17; maxThreads: 1000
+Dec-13 15:32:00.498 [main] DEBUG nextflow.Session - Session start
+Dec-13 15:32:00.501 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /Users/goldriev/mono-trac/primer_design/output/execution/trace.txt
+Dec-13 15:32:00.513 [main] DEBUG nextflow.Session - Using default localLib path: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/lib
+Dec-13 15:32:00.518 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/lib
+Dec-13 15:32:00.518 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/lib/nfcore_external_java_deps.jar
+Dec-13 15:32:02.657 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Dec-13 15:32:05.216 [main] INFO  nextflow.Nextflow - 
+[0;92m||||||||||   [0m[2m_____ ____ ___ ____  __  __ _____      _       _
+[0;92m||||||||||  [0m[2m| ____|  _ \_ _|___ \|  \/  | ____|    | | __ _| |__  ___
+[0;33m|||||       [0m[2m|  _| | |_) | |  __) | |\/| |  _| _____| |/ _` | '_ \/ __|
+[0;33m|||||       [0m[2m| |___|  __/| | / __/| |  | | |__|_____| | (_| | |_) \__ \
+[0;94m||||||||||  [0m[2m|_____|_|  |___|_____|_|  |_|_____|    |_|\__,_|_.__/|___/
+[0;94m||||||||||  [0m[1mwf-amplicon v1.1.4-g1cf4682[0m
+[2m--------------------------------------------------------------------------------[0m
+[1mCore Nextflow options[0m
+  [0;34mrevision               : [0;32mmaster[0m
+  [0;34mrunName                : [0;32mboring_moriondo[0m
+  [0;34mcontainerEngine        : [0;32mdocker[0m
+  [0;34mcontainer              : [0;32m[withLabel:wf_common:ontresearch/wf-common:shad28e55140f75a68f59bbecc74e880aeab16ab158, withLabel:wfamplicon:ontresearch/wf-amplicon:sha0ba67476938520e6f132759780d0a0e902925c59, withLabel:medaka:ontresearch/medaka:sha3486abaab0d3b90351617eb8622acf2028edb154][0m
+  [0;34mlaunchDir              : [0;32m/Users/goldriev/mono-trac/primer_design[0m
+  [0;34mworkDir                : [0;32m/Users/goldriev/mono-trac/primer_design/work[0m
+  [0;34mprojectDir             : [0;32m/Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon[0m
+  [0;34muserName               : [0;32mgoldriev[0m
+  [0;34mprofile                : [0;32mstandard[0m
+  [0;34mconfigFiles            : [0;32m/Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/nextflow.config[0m
+
+[1mInput Options[0m
+  [0;34mfastq                  : [0;32m/Volumes/matthews/Guy/Raw_data/cobalt/genome/nanopore_cow/EOX_908_12_190623.fastq.gz[0m
+  [0;34mreads_downsampling_size: [0;32m100000[0m
+  [0;34mreference              : [0;32mtargets.fasta[0m
+
+[1mAdvanced Options[0m
+  [0;34moverride_basecaller_cfg: [0;32mdna_r10.4.1_e8.2_400bps_sup@v5.0.0[0m
+
+!! Only displaying parameters that differ from the pipeline defaults !!
+[2m--------------------------------------------------------------------------------[0m
+If you use epi2me-labs/wf-amplicon for your analysis please cite:
+
+* The nf-core framework
+  https://doi.org/10.1038/s41587-020-0439-x
+
+
+[2m--------------------------------------------------------------------------------[0m
+This is epi2me-labs/wf-amplicon v1.1.4-g1cf4682.
+[2m--------------------------------------------------------------------------------[0m
+Dec-13 15:32:05.368 [main] INFO  nextflow.Nextflow - Searching input for [.fastq, .fastq.gz, .fq, .fq.gz] files.
+Dec-13 15:32:05.536 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wf_common` matches labels `ingress,wf_common` for process with name fastcat
+Dec-13 15:32:05.550 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:05.550 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:05.556 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Dec-13 15:32:05.562 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=16; memory=64 GB; capacity=16; pollInterval=100ms; dumpInterval=5m
+Dec-13 15:32:05.565 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Dec-13 15:32:05.663 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfamplicon` matches labels `wfamplicon` for process with name pipeline:getVersions
+Dec-13 15:32:05.665 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:05.665 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:05.670 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:medaka` matches labels `medaka` for process with name pipeline:addMedakaToVersionsFile
+Dec-13 15:32:05.671 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:05.672 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:05.676 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfamplicon` matches labels `wfamplicon` for process with name pipeline:getParams
+Dec-13 15:32:05.677 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:05.677 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:05.685 [main] WARN  nextflow.Nextflow - Overriding basecall model with 'dna_r10.4.1_e8.2_400bps_sup@v5.0.0'.
+Dec-13 15:32:05.696 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfamplicon` matches labels `wfamplicon` for process with name pipeline:subsetReads
+Dec-13 15:32:05.697 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:05.698 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:05.727 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfamplicon` matches labels `wfamplicon` for process with name pipeline:porechop
+Dec-13 15:32:05.729 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:05.729 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:05.821 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfamplicon` matches labels `wfamplicon` for process with name pipeline:variantCallingPipeline:sanitizeRefFile
+Dec-13 15:32:05.823 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:05.824 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:05.993 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfamplicon` matches labels `wfamplicon` for process with name pipeline:variantCallingPipeline:subsetRefFile
+Dec-13 15:32:05.995 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:05.995 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:06.020 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfamplicon` matches labels `wfamplicon` for process with name pipeline:variantCallingPipeline:alignReads
+Dec-13 15:32:06.021 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:06.021 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:06.034 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfamplicon` matches labels `wfamplicon` for process with name pipeline:variantCallingPipeline:bamstats
+Dec-13 15:32:06.036 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:06.036 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:06.100 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfamplicon` matches labels `wfamplicon` for process with name pipeline:variantCallingPipeline:downsampleBAMforMedaka
+Dec-13 15:32:06.108 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:06.108 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:06.136 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:medaka` matches labels `medaka` for process with name pipeline:variantCallingPipeline:medakaConsensus
+Dec-13 15:32:06.140 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:06.140 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:06.158 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:medaka` matches labels `medaka` for process with name pipeline:variantCallingPipeline:medakaVariant
+Dec-13 15:32:06.159 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:06.160 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:06.181 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfamplicon` matches labels `wfamplicon` for process with name pipeline:variantCallingPipeline:mosdepth
+Dec-13 15:32:06.183 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:06.183 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:06.194 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfamplicon` matches labels `wfamplicon` for process with name pipeline:variantCallingPipeline:concatMosdepthResultFiles
+Dec-13 15:32:06.195 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:06.196 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:06.236 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfamplicon` matches labels `wfamplicon` for process with name pipeline:collectFilesInDir
+Dec-13 15:32:06.239 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:06.239 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:06.249 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfamplicon` matches labels `wfamplicon` for process with name pipeline:makeReport
+Dec-13 15:32:06.251 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:06.251 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:06.267 [main] DEBUG nextflow.script.ProcessConfig - Config settings `withLabel:wfamplicon` matches labels `wfamplicon` for process with name publish
+Dec-13 15:32:06.269 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Dec-13 15:32:06.270 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Dec-13 15:32:06.275 [main] DEBUG nextflow.Session - Workflow process names [dsl2]: move_or_compress_fq_file, pipeline:getParams, mosdepthWindows, racon, bamstatsPolished, pipeline:addMedakaToVersionsFile, mergeBAMs, checkBamHeaders, alignReads, mergeBams, medakaVariant, pipeline:variantCallingPipeline:medakaVariant, makeReport, getVersions, validateIndex, bamstats, pipeline:subsetReads, downsampleReads, medakaStitch, downsampleBAMforMedaka, fastcat, miniasm, pipeline:variantCallingPipeline:sanitizeRefFile, pipeline:variantCallingPipeline:medakaConsensus, subsetReads, collectFilesInDir, samtools_index, mosdepthPerBase, getParams, pipeline:collectFilesInDir, medakaConsensus, sortBam, validate_sample_sheet, alignDraft, alignPolished, sanitizeRefFile, pipeline:variantCallingPipeline:bamstats, pipeline:makeReport, trimAndQC, pipeline:variantCallingPipeline:subsetRefFile, spoa, pipeline:variantCallingPipeline:alignReads, subsetRefFile, pipeline:variantCallingPipeline:concatMosdepthResultFiles, concatTSVs, configure_igv, porechop, mergeVCFs, catFastqIntoFasta, pipeline:variantCallingPipeline:downsampleBAMforMedaka, pipeline:getVersions, pipeline:variantCallingPipeline:mosdepth, concatMosdepthResultFiles, split_fq_file, addMedakaToVersionsFile, mosdepth, pipeline:porechop, publish, catSortBams, bamstatsDraft
+Dec-13 15:32:06.277 [main] DEBUG nextflow.Session - Igniting dataflow network (23)
+Dec-13 15:32:06.278 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > fastcat
+Dec-13 15:32:06.279 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > pipeline:getVersions
+Dec-13 15:32:06.279 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > pipeline:addMedakaToVersionsFile
+Dec-13 15:32:06.280 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > pipeline:getParams
+Dec-13 15:32:06.283 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > pipeline:subsetReads
+Dec-13 15:32:06.295 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > pipeline:porechop
+Dec-13 15:32:06.296 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > pipeline:variantCallingPipeline:sanitizeRefFile
+Dec-13 15:32:06.299 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > pipeline:variantCallingPipeline:subsetRefFile
+Dec-13 15:32:06.304 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > pipeline:variantCallingPipeline:alignReads
+Dec-13 15:32:06.304 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > pipeline:variantCallingPipeline:bamstats
+Dec-13 15:32:06.305 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > pipeline:variantCallingPipeline:downsampleBAMforMedaka
+Dec-13 15:32:06.305 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > pipeline:variantCallingPipeline:medakaConsensus
+Dec-13 15:32:06.305 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > pipeline:variantCallingPipeline:medakaVariant
+Dec-13 15:32:06.305 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > pipeline:variantCallingPipeline:mosdepth
+Dec-13 15:32:06.306 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > pipeline:variantCallingPipeline:concatMosdepthResultFiles
+Dec-13 15:32:06.306 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > pipeline:collectFilesInDir
+Dec-13 15:32:06.307 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > pipeline:makeReport
+Dec-13 15:32:06.307 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > publish
+Dec-13 15:32:06.310 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  Script_b46f01bd9843c35b: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/./modules/local/./common.nf
+  Script_c57a757a160164f3: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/./lib/common.nf
+  Script_0d96750cf8420ecf: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/main.nf
+  Script_3edf379f174c5c46: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/./modules/local/de-novo.nf
+  Script_51eedbf128bb8517: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/./modules/local/variant-calling.nf
+  Script_9674c65acf93e4e1: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/./lib/ingress.nf
+Dec-13 15:32:06.311 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Dec-13 15:32:06.311 [main] DEBUG nextflow.Session - Session await
+Dec-13 15:32:06.538 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:32:06.542 [Task submitter] INFO  nextflow.Session - [88/4a8a7b] Submitted process > fastcat (1)
+Dec-13 15:32:06.554 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:32:06.555 [Task submitter] INFO  nextflow.Session - [0d/6a16a2] Submitted process > pipeline:getParams
+Dec-13 15:32:06.564 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:32:06.565 [Task submitter] INFO  nextflow.Session - [01/8794fc] Submitted process > pipeline:getVersions
+Dec-13 15:32:06.576 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:32:06.577 [Task submitter] INFO  nextflow.Session - [85/2b5f9f] Submitted process > pipeline:variantCallingPipeline:sanitizeRefFile
+Dec-13 15:32:08.620 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: pipeline:getParams; status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/0d/6a16a2a802163a75ef5b6b37177331]
+Dec-13 15:32:08.620 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=48; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Dec-13 15:32:08.638 [TaskFinalizer-1] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=48; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Dec-13 15:32:09.533 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 1; name: pipeline:variantCallingPipeline:sanitizeRefFile; status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/85/2b5f9f131f5517007b08653861e098]
+Dec-13 15:32:28.536 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: pipeline:getVersions; status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/01/8794fca38bd0f4131272125bb1c382]
+Dec-13 15:32:28.555 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:32:28.556 [Task submitter] INFO  nextflow.Session - [8d/e6c82e] Submitted process > pipeline:addMedakaToVersionsFile
+Dec-13 15:32:30.715 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 5; name: pipeline:addMedakaToVersionsFile; status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/8d/e6c82eb945a811601b722f287f08a7]
+Dec-13 15:35:37.584 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: fastcat (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/88/4a8a7bb38db464a770cf66e94d7847]
+Dec-13 15:35:37.623 [Actor Thread 4] DEBUG nextflow.util.HashBuilder - Hash asset file sha-256: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/bin/workflow-glue
+Dec-13 15:35:37.641 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:35:37.641 [Task submitter] INFO  nextflow.Session - [c2/9b7515] Submitted process > pipeline:subsetReads (1)
+Dec-13 15:37:05.711 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 6; name: pipeline:subsetReads (1); status: RUNNING; exit: -; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/c2/9b75157bd58e369055bf70f5795867]
+Dec-13 15:38:31.079 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: pipeline:subsetReads (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/c2/9b75157bd58e369055bf70f5795867]
+Dec-13 15:38:31.096 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:38:31.097 [Task submitter] INFO  nextflow.Session - [fa/24388d] Submitted process > pipeline:porechop (1)
+Dec-13 15:42:05.813 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 7; name: pipeline:porechop (1); status: RUNNING; exit: -; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/fa/24388dfe928d18db0381172b9fec38]
+Dec-13 15:47:05.895 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > tasks to be completed: 1 -- submitted tasks are shown below
+~> TaskHandler[id: 7; name: pipeline:porechop (1); status: RUNNING; exit: -; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/fa/24388dfe928d18db0381172b9fec38]
+Dec-13 15:47:22.898 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 7; name: pipeline:porechop (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/fa/24388dfe928d18db0381172b9fec38]
+Dec-13 15:47:22.944 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:22.945 [Task submitter] INFO  nextflow.Session - [9a/8f96a4] Submitted process > pipeline:variantCallingPipeline:alignReads (1)
+Dec-13 15:47:43.854 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 8; name: pipeline:variantCallingPipeline:alignReads (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/9a/8f96a450f35dd56a93f2f73ad6a4ef]
+Dec-13 15:47:43.880 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:43.880 [Task submitter] INFO  nextflow.Session - [4e/d03068] Submitted process > pipeline:variantCallingPipeline:mosdepth (9)
+Dec-13 15:47:43.901 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:43.902 [Task submitter] INFO  nextflow.Session - [58/e0ae89] Submitted process > pipeline:variantCallingPipeline:mosdepth (13)
+Dec-13 15:47:43.911 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:43.911 [Task submitter] INFO  nextflow.Session - [69/bb7a11] Submitted process > pipeline:variantCallingPipeline:mosdepth (14)
+Dec-13 15:47:43.918 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:43.919 [Task submitter] INFO  nextflow.Session - [6b/dd8076] Submitted process > pipeline:variantCallingPipeline:mosdepth (7)
+Dec-13 15:47:43.927 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:43.928 [Task submitter] INFO  nextflow.Session - [69/50447a] Submitted process > pipeline:variantCallingPipeline:mosdepth (10)
+Dec-13 15:47:46.444 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 22; name: pipeline:variantCallingPipeline:mosdepth (13); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/58/e0ae89cc9635c2951483e81dbd1fb0]
+Dec-13 15:47:46.450 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:46.451 [Task submitter] INFO  nextflow.Session - [58/fb7431] Submitted process > pipeline:variantCallingPipeline:mosdepth (6)
+Dec-13 15:47:46.577 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 19; name: pipeline:variantCallingPipeline:mosdepth (10); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/69/50447a6bc01fcbfdc40295890caf7d]
+Dec-13 15:47:46.588 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:46.589 [Task submitter] INFO  nextflow.Session - [f7/bd9a0b] Submitted process > pipeline:variantCallingPipeline:bamstats (1)
+Dec-13 15:47:46.610 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 23; name: pipeline:variantCallingPipeline:mosdepth (14); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/69/bb7a11700a84f5af36465989c220e4]
+Dec-13 15:47:46.619 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:46.619 [Task submitter] INFO  nextflow.Session - [be/e487a6] Submitted process > pipeline:variantCallingPipeline:mosdepth (15)
+Dec-13 15:47:46.624 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 16; name: pipeline:variantCallingPipeline:mosdepth (7); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/6b/dd8076fd573bd9bbb24da089371822]
+Dec-13 15:47:46.631 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:46.632 [Task submitter] INFO  nextflow.Session - [a0/ae9376] Submitted process > pipeline:variantCallingPipeline:mosdepth (2)
+Dec-13 15:47:46.699 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 18; name: pipeline:variantCallingPipeline:mosdepth (9); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/4e/d030683390fd87df308f924b1b19f5]
+Dec-13 15:47:46.705 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:46.706 [Task submitter] INFO  nextflow.Session - [fa/7c5eff] Submitted process > pipeline:variantCallingPipeline:mosdepth (16)
+Dec-13 15:47:49.291 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 25; name: pipeline:variantCallingPipeline:mosdepth (16); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/fa/7c5eff77877b486391ce75a61ee11a]
+Dec-13 15:47:49.296 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:49.297 [Task submitter] INFO  nextflow.Session - [43/3e44a0] Submitted process > pipeline:variantCallingPipeline:mosdepth (3)
+Dec-13 15:47:49.333 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 24; name: pipeline:variantCallingPipeline:mosdepth (15); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/be/e487a62bef337f9aa5ea27f7c8c36e]
+Dec-13 15:47:49.341 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:49.341 [Task submitter] INFO  nextflow.Session - [e7/c2aa08] Submitted process > pipeline:variantCallingPipeline:mosdepth (5)
+Dec-13 15:47:49.525 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 11; name: pipeline:variantCallingPipeline:mosdepth (2); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/a0/ae93760096da5029a71f1cfeb53753]
+Dec-13 15:47:49.532 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:49.533 [Task submitter] INFO  nextflow.Session - [59/6cf9a7] Submitted process > pipeline:variantCallingPipeline:mosdepth (8)
+Dec-13 15:47:49.561 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 15; name: pipeline:variantCallingPipeline:mosdepth (6); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/58/fb74318479abfdad57f17abfc3efce]
+Dec-13 15:47:49.602 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:49.602 [Task submitter] INFO  nextflow.Session - [a5/8b66bb] Submitted process > pipeline:variantCallingPipeline:mosdepth (1)
+Dec-13 15:47:50.698 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 12; name: pipeline:variantCallingPipeline:mosdepth (3); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/43/3e44a04f005e680bdd961d2aacaf80]
+Dec-13 15:47:50.702 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:50.703 [Task submitter] INFO  nextflow.Session - [8f/e6576b] Submitted process > pipeline:variantCallingPipeline:mosdepth (12)
+Dec-13 15:47:50.801 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 14; name: pipeline:variantCallingPipeline:mosdepth (5); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/e7/c2aa08a8a7c62cc6b425629e6ad36f]
+Dec-13 15:47:50.807 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:50.808 [Task submitter] INFO  nextflow.Session - [36/4f9d4a] Submitted process > pipeline:variantCallingPipeline:mosdepth (4)
+Dec-13 15:47:50.977 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 17; name: pipeline:variantCallingPipeline:mosdepth (8); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/59/6cf9a76af4919d0ca873fcf91a3629]
+Dec-13 15:47:50.978 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 10; name: pipeline:variantCallingPipeline:mosdepth (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/a5/8b66bb0155e0db1498f8be3e43f101]
+Dec-13 15:47:50.983 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:50.984 [Task submitter] INFO  nextflow.Session - [cb/80951c] Submitted process > pipeline:variantCallingPipeline:mosdepth (11)
+Dec-13 15:47:50.992 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:50.992 [Task submitter] INFO  nextflow.Session - [80/f3327f] Submitted process > pipeline:variantCallingPipeline:mosdepth (18)
+Dec-13 15:47:52.018 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 21; name: pipeline:variantCallingPipeline:mosdepth (12); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/8f/e6576b6bf68154943e8d0f22e7fc59]
+Dec-13 15:47:52.051 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:52.051 [Task submitter] INFO  nextflow.Session - [c2/831886] Submitted process > pipeline:variantCallingPipeline:mosdepth (19)
+Dec-13 15:47:52.186 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 13; name: pipeline:variantCallingPipeline:mosdepth (4); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/36/4f9d4ac97f7ddba8ebbcf90ce020d5]
+Dec-13 15:47:52.192 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:52.192 [Task submitter] INFO  nextflow.Session - [89/c73550] Submitted process > pipeline:variantCallingPipeline:mosdepth (17)
+Dec-13 15:47:52.391 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 27; name: pipeline:variantCallingPipeline:mosdepth (18); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/80/f3327fbabe16bda4388d94a58fc1ae]
+Dec-13 15:47:52.396 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:52.397 [Task submitter] INFO  nextflow.Session - [91/c3f9ef] Submitted process > pipeline:variantCallingPipeline:mosdepth (20)
+Dec-13 15:47:52.465 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 20; name: pipeline:variantCallingPipeline:mosdepth (11); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/cb/80951c79c175dae0c63135b982a310]
+Dec-13 15:47:53.368 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 28; name: pipeline:variantCallingPipeline:mosdepth (19); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/c2/831886e72f522ccf0aa54adaf44e02]
+Dec-13 15:47:53.425 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 26; name: pipeline:variantCallingPipeline:mosdepth (17); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/89/c7355098a5eb9abc32bf24d071809f]
+Dec-13 15:47:53.488 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 29; name: pipeline:variantCallingPipeline:mosdepth (20); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/91/c3f9ef86b0bf994fc2cc3690d23af9]
+Dec-13 15:47:53.507 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:53.507 [Task submitter] INFO  nextflow.Session - [2e/86b3d6] Submitted process > pipeline:variantCallingPipeline:concatMosdepthResultFiles (1)
+Dec-13 15:47:54.831 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 30; name: pipeline:variantCallingPipeline:concatMosdepthResultFiles (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/2e/86b3d67a42a5c74d557939e351ab2e]
+Dec-13 15:47:57.127 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 9; name: pipeline:variantCallingPipeline:bamstats (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/f7/bd9a0b28feb04053c63b2525dcd0bb]
+Dec-13 15:47:57.152 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:47:57.152 [Task submitter] INFO  nextflow.Session - [16/9af0b9] Submitted process > pipeline:variantCallingPipeline:downsampleBAMforMedaka (1)
+Dec-13 15:48:03.966 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 31; name: pipeline:variantCallingPipeline:downsampleBAMforMedaka (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/16/9af0b9a25be0fef935c82d18787ae6]
+Dec-13 15:48:03.993 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:03.993 [Task submitter] INFO  nextflow.Session - [a5/1e1231] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (9)
+Dec-13 15:48:04.001 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:04.002 [Task submitter] INFO  nextflow.Session - [bb/465a8b] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (14)
+Dec-13 15:48:04.008 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:04.008 [Task submitter] INFO  nextflow.Session - [a0/725b8d] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (13)
+Dec-13 15:48:04.015 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:04.015 [Task submitter] INFO  nextflow.Session - [51/f660d6] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (2)
+Dec-13 15:48:04.022 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:04.023 [Task submitter] INFO  nextflow.Session - [a0/147f08] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (7)
+Dec-13 15:48:04.030 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:04.031 [Task submitter] INFO  nextflow.Session - [de/b40ad2] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (11)
+Dec-13 15:48:04.038 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:04.039 [Task submitter] INFO  nextflow.Session - [83/8a2f20] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (6)
+Dec-13 15:48:04.045 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:04.046 [Task submitter] INFO  nextflow.Session - [80/387ba9] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (4)
+Dec-13 15:48:19.428 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 33; name: pipeline:variantCallingPipeline:medakaConsensus (2); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/51/f660d6dd0e7cbf0c9da685aa0dd2ad]
+Dec-13 15:48:19.435 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:19.436 [Task submitter] INFO  nextflow.Session - [9b/3b1171] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (1)
+Dec-13 15:48:22.553 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 37; name: pipeline:variantCallingPipeline:medakaConsensus (6); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/83/8a2f201f4be68e9ec728a200f1fbf6]
+Dec-13 15:48:22.558 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:22.560 [Task submitter] INFO  nextflow.Session - [f5/049eee] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (12)
+Dec-13 15:48:22.914 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 38; name: pipeline:variantCallingPipeline:medakaConsensus (7); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/a0/147f082f7ab0ab34c26538a67e99fa]
+Dec-13 15:48:22.923 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:22.923 [Task submitter] INFO  nextflow.Session - [61/8750d7] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (5)
+Dec-13 15:48:24.067 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 42; name: pipeline:variantCallingPipeline:medakaConsensus (11); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/de/b40ad2ebfc2d23a8bfda89eb0042cd]
+Dec-13 15:48:24.072 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:24.072 [Task submitter] INFO  nextflow.Session - [e0/741b32] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (3)
+Dec-13 15:48:25.893 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 45; name: pipeline:variantCallingPipeline:medakaConsensus (14); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/bb/465a8b9b799d243f68eabf922645cc]
+Dec-13 15:48:25.899 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:25.900 [Task submitter] INFO  nextflow.Session - [54/8d03af] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (10)
+Dec-13 15:48:27.339 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 40; name: pipeline:variantCallingPipeline:medakaConsensus (9); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/a5/1e123147d0941583b66298667c5bc0]
+Dec-13 15:48:27.345 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:27.345 [Task submitter] INFO  nextflow.Session - [04/82e606] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (8)
+Dec-13 15:48:36.255 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 44; name: pipeline:variantCallingPipeline:medakaConsensus (13); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/a0/725b8dad45ba477ec9aa5abab382a4]
+Dec-13 15:48:36.262 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:36.263 [Task submitter] INFO  nextflow.Session - [86/a0abd6] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (16)
+Dec-13 15:48:36.746 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 43; name: pipeline:variantCallingPipeline:medakaConsensus (12); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/f5/049eee403f28af8e59a7fa8801ab80]
+Dec-13 15:48:36.751 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:36.751 [Task submitter] INFO  nextflow.Session - [d1/c82e95] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (15)
+Dec-13 15:48:39.812 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 36; name: pipeline:variantCallingPipeline:medakaConsensus (5); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/61/8750d76d8062476c612b547b8dcb78]
+Dec-13 15:48:39.818 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:39.818 [Task submitter] INFO  nextflow.Session - [2e/2a2fd1] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (17)
+Dec-13 15:48:41.858 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 34; name: pipeline:variantCallingPipeline:medakaConsensus (3); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/e0/741b32e4ef70aa71b486583be80b0d]
+Dec-13 15:48:41.863 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:41.864 [Task submitter] INFO  nextflow.Session - [c2/2648e6] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (18)
+Dec-13 15:48:43.200 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 35; name: pipeline:variantCallingPipeline:medakaConsensus (4); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/80/387ba973060312536b42cd0b28fbf9]
+Dec-13 15:48:43.206 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:43.206 [Task submitter] INFO  nextflow.Session - [90/60c13f] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (19)
+Dec-13 15:48:48.613 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 32; name: pipeline:variantCallingPipeline:medakaConsensus (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/9b/3b1171f20058539af8bc92b41de938]
+Dec-13 15:48:48.617 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:48:48.618 [Task submitter] INFO  nextflow.Session - [ff/935343] Submitted process > pipeline:variantCallingPipeline:medakaConsensus (20)
+Dec-13 15:48:53.286 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 41; name: pipeline:variantCallingPipeline:medakaConsensus (10); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/54/8d03af29c4ddb9e034f5adf7176f6b]
+Dec-13 15:48:53.354 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 46; name: pipeline:variantCallingPipeline:medakaConsensus (15); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/d1/c82e95473d1c251db80a7fa64cb3fb]
+Dec-13 15:48:55.170 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 48; name: pipeline:variantCallingPipeline:medakaConsensus (17); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/2e/2a2fd1efc4118e338a359259061c3f]
+Dec-13 15:48:55.582 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 47; name: pipeline:variantCallingPipeline:medakaConsensus (16); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/86/a0abd6fe5e2dec8ae0f5b12d900721]
+Dec-13 15:48:56.287 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 39; name: pipeline:variantCallingPipeline:medakaConsensus (8); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/04/82e606695008cba27204fe142b5d8c]
+Dec-13 15:48:59.510 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 50; name: pipeline:variantCallingPipeline:medakaConsensus (19); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/90/60c13f6d135e30b51092d257a92ccf]
+Dec-13 15:49:00.002 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 51; name: pipeline:variantCallingPipeline:medakaConsensus (20); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/ff/935343cbbf111f266239d0eb6a1355]
+Dec-13 15:49:02.284 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 49; name: pipeline:variantCallingPipeline:medakaConsensus (18); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/c2/2648e62564ffe471971dc68f0b1c5c]
+Dec-13 15:49:02.302 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:49:02.302 [Task submitter] INFO  nextflow.Session - [15/b9e105] Submitted process > pipeline:variantCallingPipeline:medakaVariant (1)
+Dec-13 15:49:07.414 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 52; name: pipeline:variantCallingPipeline:medakaVariant (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/15/b9e1059c7c0e4c168eeae55de0a91c]
+Dec-13 15:49:07.428 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:49:07.428 [Task submitter] INFO  nextflow.Session - [e0/edc306] Submitted process > publish (1)
+Dec-13 15:49:07.434 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:49:07.434 [Task submitter] INFO  nextflow.Session - [18/a60f92] Submitted process > publish (6)
+Dec-13 15:49:07.440 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:49:07.440 [Task submitter] INFO  nextflow.Session - [d8/afe6b2] Submitted process > publish (4)
+Dec-13 15:49:07.447 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:49:07.447 [Task submitter] INFO  nextflow.Session - [62/8ba71a] Submitted process > publish (5)
+Dec-13 15:49:07.454 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:49:07.455 [Task submitter] INFO  nextflow.Session - [46/645f33] Submitted process > publish (2)
+Dec-13 15:49:07.462 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:49:07.462 [Task submitter] INFO  nextflow.Session - [98/ebf968] Submitted process > publish (3)
+Dec-13 15:49:07.468 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:49:07.469 [Task submitter] INFO  nextflow.Session - [5e/2f7829] Submitted process > publish (7)
+Dec-13 15:49:07.476 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:49:07.476 [Task submitter] INFO  nextflow.Session - [bf/6742c3] Submitted process > pipeline:collectFilesInDir (1)
+Dec-13 15:49:09.998 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 57; name: publish (4); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/d8/afe6b242e9f7d573267ecb94d89023]
+Dec-13 15:49:10.286 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 60; name: publish (7); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/5e/2f782975e336485a427bc06bcb3911]
+Dec-13 15:49:10.353 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 59; name: publish (6); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/18/a60f92bdd5269f4963f8cd8b248ce1]
+Dec-13 15:49:10.420 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 53; name: publish (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/e0/edc3061ba701a26b50d429dba370c2]
+Dec-13 15:49:10.485 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 55; name: publish (3); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/98/ebf9684d0b5cf8b85310d600f5a8b2]
+Dec-13 15:49:10.635 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 56; name: pipeline:collectFilesInDir (1); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/bf/6742c38385d87db9d8106df505c436]
+Dec-13 15:49:10.661 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 54; name: publish (2); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/46/645f33e18f7a00e4366eebd0151fc6]
+Dec-13 15:49:10.663 [Actor Thread 7] DEBUG nextflow.util.HashBuilder - Hash asset file sha-256: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/data/OPTIONAL_FILE
+Dec-13 15:49:10.677 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Dec-13 15:49:10.677 [Task submitter] INFO  nextflow.Session - [46/732309] Submitted process > pipeline:makeReport
+Dec-13 15:49:10.746 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 58; name: publish (5); status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/62/8ba71adac0ef318d8cb9557e3a2b49]
+Dec-13 15:49:31.015 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 61; name: pipeline:makeReport; status: COMPLETED; exit: 0; error: -; workDir: /Users/goldriev/mono-trac/primer_design/work/46/732309881ae3cdf3c9bd1c933403f9]
+Dec-13 15:49:31.017 [main] DEBUG nextflow.Session - Session await > all processes finished
+Dec-13 15:49:31.125 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Dec-13 15:49:31.126 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Dec-13 15:49:31.131 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'TaskFinalizer' shutdown completed (hard=false)
+Dec-13 15:49:31.131 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Dec-13 15:49:31.237 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=61; failedCount=0; ignoredCount=0; cachedCount=0; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=1h 7m 14s; failedDuration=0ms; cachedDuration=0ms;loadCpus=0; loadMemory=0; peakRunning=8; peakCpus=16; peakMemory=64 GB; ]
+Dec-13 15:49:31.237 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Dec-13 15:49:31.238 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Dec-13 15:49:32.068 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Dec-13 15:49:32.282 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Dec-13 15:49:32.352 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Dec-13 15:49:32.352 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

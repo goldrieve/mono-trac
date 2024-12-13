@@ -1,0 +1,77 @@
+Dec-13 14:04:32.241 [main] DEBUG nextflow.cli.Launcher - $> nextflow run epi2me-labs/wf-amplicon --fastq /Users/goldriev/Desktop/nanopore/EOX_908_12_190623/basecalling10/pass/fastq_runid_7ee0f69cbd2f17e7a3b7e480731bb65e1947bc50_419_0.fastq.gz --reference targets.fasta --override_basecaller_cfg
+Dec-13 14:04:32.331 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 24.10.0
+Dec-13 14:04:32.348 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/Users/goldriev/.nextflow/plugins; core-plugins: nf-amazon@2.9.0,nf-azure@1.10.1,nf-cloudcache@0.4.2,nf-codecommit@0.2.2,nf-console@1.1.4,nf-google@1.15.2,nf-tower@1.9.3,nf-wave@1.7.2
+Dec-13 14:04:32.363 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Dec-13 14:04:32.364 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Dec-13 14:04:32.367 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.12.0 in 'deployment' mode
+Dec-13 14:04:32.381 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Dec-13 14:04:32.392 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /Users/goldriev/.nextflow/scm
+Dec-13 14:04:32.822 [main] DEBUG nextflow.scm.ProviderConfig - Detected SCM config: [providers:[github:[user:goldrieve, password:ghp****]]]
+Dec-13 14:04:32.841 [main] DEBUG nextflow.scm.RepositoryFactory - Found Git repository result: [RepositoryFactory]
+Dec-13 14:04:33.149 [main] DEBUG nextflow.scm.AssetManager - Git config: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/.git/config; branch: null; remote: origin; url: https://github.com/epi2me-labs/wf-amplicon.git
+Dec-13 14:04:33.166 [main] DEBUG nextflow.scm.AssetManager - Git config: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/.git/config; branch: null; remote: origin; url: https://github.com/epi2me-labs/wf-amplicon.git
+Dec-13 14:04:33.838 [main] DEBUG nextflow.config.ConfigBuilder - Found config base: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/nextflow.config
+Dec-13 14:04:33.840 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/nextflow.config
+Dec-13 14:04:33.846 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /Users/goldriev/.nextflow/secrets/store.json
+Dec-13 14:04:33.848 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@15d114ce] - activable => nextflow.secret.LocalSecretsProvider@15d114ce
+Dec-13 14:04:33.856 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+Dec-13 14:04:33.994 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=2 from script declaration
+Dec-13 14:04:33.994 [main] DEBUG nextflow.cli.CmdRun - Launching `https://github.com/epi2me-labs/wf-amplicon` [silly_blackwell] DSL2 - revision: 1cf4682471 [master]
+Dec-13 14:04:33.996 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Dec-13 14:04:33.996 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Dec-13 14:04:34.048 [main] DEBUG nextflow.Session - Session UUID: 21902cc5-97ee-4267-bb56-489da8b7cd4b
+Dec-13 14:04:34.048 [main] DEBUG nextflow.Session - Run name: silly_blackwell
+Dec-13 14:04:34.048 [main] DEBUG nextflow.Session - Executor pool size: 16
+Dec-13 14:04:34.057 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Dec-13 14:04:34.062 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=48; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Dec-13 14:04:34.086 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 24.10.0 build 5928
+  Created: 27-10-2024 18:36 UTC (18:36 BST)
+  System: Mac OS X 14.7.1
+  Runtime: Groovy 4.0.23 on OpenJDK 64-Bit Server VM 11.0.13+7-b1751.21
+  Encoding: UTF-8 (UTF-8)
+  Process: 93469@sce-bio-c05389.bio.ed.ac.uk [129.215.170.47]
+  CPUs: 16 - Mem: 64 GB (13.6 GB) - Swap: 2 GB (1.6 GB)
+Dec-13 14:04:34.102 [main] DEBUG nextflow.Session - Work-dir: /Users/goldriev/mono-trac/primer_design/work [Mac OS X]
+Dec-13 14:04:34.132 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Dec-13 14:04:34.143 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Dec-13 14:04:34.195 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Dec-13 14:04:34.206 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 17; maxThreads: 1000
+Dec-13 14:04:34.267 [main] DEBUG nextflow.Session - Session start
+Dec-13 14:04:34.270 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: /Users/goldriev/mono-trac/primer_design/output/execution/trace.txt
+Dec-13 14:04:34.275 [main] DEBUG nextflow.Session - Using default localLib path: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/lib
+Dec-13 14:04:34.279 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/lib
+Dec-13 14:04:34.279 [main] DEBUG nextflow.Session - Adding to the classpath library: /Users/goldriev/.nextflow/assets/epi2me-labs/wf-amplicon/lib/nfcore_external_java_deps.jar
+Dec-13 14:04:36.531 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Dec-13 14:04:38.688 [main] ERROR nextflow.Nextflow - Validation of pipeline parameters failed!
+Dec-13 14:04:38.697 [main] ERROR nextflow.Nextflow - * --override_basecaller_cfg: true is not a valid choice, pick one of:
+    - dna_r10.4.1_e8.2_400bps_sup@v5.0.0
+    - dna_r10.4.1_e8.2_400bps_hac@v5.0.0
+    - dna_r10.4.1_e8.2_400bps_sup@v4.3.0
+    - dna_r10.4.1_e8.2_400bps_hac@v4.3.0
+    - dna_r10.4.1_e8.2_400bps_sup@v4.2.0
+    - dna_r10.4.1_e8.2_400bps_hac@v4.2.0
+    - dna_r10.4.1_e8.2_260bps_hac@v4.1.0
+    - dna_r10.4.1_e8.2_260bps_sup@v4.1.0
+    - dna_r10.4.1_e8.2_400bps_hac@v4.1.0
+    - dna_r10.4.1_e8.2_400bps_sup@v4.1.0
+    - dna_r10.4.1_e8.2_260bps_hac@v4.0.0
+    - dna_r10.4.1_e8.2_260bps_sup@v4.0.0
+    - dna_r10.4.1_e8.2_400bps_hac@v4.0.0
+    - dna_r10.4.1_e8.2_400bps_sup@v4.0.0
+    - dna_r10.4.1_e8.2_400bps_hac@v3.5.2
+    - dna_r10.4.1_e8.2_400bps_sup@v3.5.2
+    - dna_r9.4.1_e8_fast@v3.4
+    - dna_r9.4.1_e8_hac@v3.3
+    - dna_r9.4.1_e8_sup@v3.3
+    - dna_r10.4.1_e8.2_400bps_hac_prom
+    - dna_r9.4.1_450bps_hac_prom
+    - dna_r10.3_450bps_hac
+    - dna_r10.3_450bps_hac_prom
+    - dna_r10.4.1_e8.2_260bps_hac
+    - dna_r10.4.1_e8.2_260bps_hac_prom
+    - dna_r10.4.1_e8.2_400bps_hac
+    - dna_r9.4.1_450bps_hac
+    - dna_r9.4.1_e8.1_hac
+    - dna_r9.4.1_e8.1_hac_prom
+Dec-13 14:04:38.697 [main] ERROR nextflow.Nextflow - * --override_basecaller_cfg: expected type: String, found: Boolean (true)
