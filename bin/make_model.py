@@ -71,9 +71,7 @@ bst = xgb.train(params, dtrain, num_boost_round=100, evals=[(dtest, 'test')], ea
 bst = xgb.train(params, dtrain, num_boost_round=100, evals=[(dtest, 'test')], early_stopping_rounds=10)
 
 # Save the model
-model_filename = 'xgboost_model.json'
-bst.save_model(model_filename)
-print(f"Model saved to {model_filename}")
+bst.save_model('ml/model/xgboost_model.json')
 
 # Evaluate the model
 y_pred = bst.predict(dtest)
@@ -87,5 +85,4 @@ print("\nClassification Report:")
 print(classification_report(y_test, y_pred_binary))
 
 # Save the model using joblib
-joblib.dump(bst, 'xgboost_model.pkl')
-print("Model saved to xgboost_model.pkl")
+joblib.dump(bst, 'ml/model/xgboost_model.pkl')

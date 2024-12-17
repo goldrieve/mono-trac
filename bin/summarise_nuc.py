@@ -142,7 +142,7 @@ def main(dna_file, output_dir):
 
     print(f"Results saved to {output_file} \n")
 
-    xgb_mod = joblib.load('code/xgboost_model.pkl')
+    xgb_mod = joblib.load('ml/model/xgboost_model.pkl')
     new_data = pd.read_csv(output_file)
     new_data_features = new_data.drop(columns=['isolate'])
     new = xgb.DMatrix(new_data_features)
