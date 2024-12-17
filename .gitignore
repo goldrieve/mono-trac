@@ -1,2 +1,4 @@
 amplicon/
 wf-amplicon/
+.nextflow*
+.DS_Store
