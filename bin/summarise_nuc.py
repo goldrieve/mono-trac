@@ -142,14 +142,12 @@ def main(dna_file, output_dir):
 
     print(f"Results saved to {output_file} \n")
 
-    xgb_mod = joblib.load('ml/model/xgboost_model.pkl')
+    mod = joblib.load('ml/model/random_forest_model.pkl')
     new_data = pd.read_csv(output_file)
     new_data_features = new_data.drop(columns=['isolate'])
-    new = xgb.DMatrix(new_data_features)
-   
-    predictions = xgb_mod.predict(new)
+    predictions = mod.predict(new_data_features)
     predictions_binary = ['Pleomorphic' if pred > 0.5 else 'Monomorphic' for pred in predictions]
-    proba = xgb_mod.predict(new)
+    proba = mod.predict_proba(new_data_features)
     print("This isolate is", predictions_binary[0].upper(), "\nProbability =", proba[0], "\n")
 
 if __name__ == "__main__":
