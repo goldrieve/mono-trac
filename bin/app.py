@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import os
 import numpy as np
 from geopy.geocoders import Nominatim
+import pydeck as pdk
 
 @st.cache_data
 def process_data(uploaded_file):
@@ -109,11 +110,43 @@ else:
 
 if page == "Interactive Map":
     st.subheader('Isolate Locations')
-    locations = read.csv('ml/meta_data.csv')
+    meta_data = pd.read_csv('ml/meta_data.csv')
     
-    geolocator = Nominatim(user_agent="myGeopyApp")
-    location = geolocator.geocode("England")
-    country_data = pd.DataFrame(demo_data)
-    
-    # Display the map with dots for each country
-    st.map(country_data)
+    if 'Competence' in meta_data.columns:
+        # Create a fixed color map for competence levels
+        competence_levels = meta_data['Competence'].unique()
+        color_map = {level: [int(hash(level) % 256), int((hash(level) // 256) % 256), int((hash(level) // 200) % 256)] for level in competence_levels}
+        
+        # Add color column to the country data
+        country_data = meta_data[['Country', 'lat', 'lon', 'Competence']].dropna()
+        country_data['color'] = country_data['Competence'].map(color_map)
+        
+        # Jitter the points if there are multiple points at the same lat and lon
+        jitter_amount = 1
+        country_data['lat'] += np.random.uniform(-jitter_amount, jitter_amount, size=len(country_data))
+        country_data['lon'] += np.random.uniform(-jitter_amount, jitter_amount, size=len(country_data))
+        
+        # Create a PyDeck layer for the map
+        layer = pdk.Layer(
+            'ScatterplotLayer',
+            data=country_data,
+            get_position='[lon, lat]',
+            get_color='color',
+            get_radius=50000,
+            pickable=True,
+            radius_scale=10,  # Adjust the scale of the radius
+            radius_min_pixels=1,  # Minimum radius in pixels
+            radius_max_pixels=5  # Maximum radius in pixels
+        )
+        
+        # Set the viewport location
+        view_state = pdk.ViewState(
+            latitude=country_data['lat'].mean(),
+            longitude=country_data['lon'].mean(),
+            zoom=1
+        )
+        
+        # Render the map
+        st.pydeck_chart(pdk.Deck(layers=[layer], initial_view_state=view_state))
+    else:
+        st.warning("The meta_data.csv file does not contain the required column: 'Competence'.")
