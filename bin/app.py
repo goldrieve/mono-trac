@@ -134,9 +134,9 @@ if page == "Interactive Map":
             get_color='color',
             get_radius=50000,
             pickable=True,
-            radius_scale=10,  # Adjust the scale of the radius
-            radius_min_pixels=1,  # Minimum radius in pixels
-            radius_max_pixels=5  # Maximum radius in pixels
+            radius_scale=10,  
+            radius_min_pixels=1,  
+            radius_max_pixels=5 
         )
         
         # Set the viewport location
