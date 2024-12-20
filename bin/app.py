@@ -3,7 +3,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import os
 import numpy as np
-from geopy.geocoders import Nominatim
 import pydeck as pdk
 
 @st.cache_data
@@ -78,7 +77,7 @@ def process_data(uploaded_file):
 st.title('MONO-TRAC Report')
 
 # Sidebar for navigation
-page = st.sidebar.selectbox("Choose a page", ["Upload CSV", "Summary Statistics", "Nucleotide Counts", "Interactive Map"])
+page = st.sidebar.selectbox("Choose a page", ["Upload CSV", "Submit Country", "Summary Statistics", "Nucleotide Counts", "Interactive Map"])
 
 # File uploader
 uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
@@ -89,7 +88,14 @@ if uploaded_file is not None:
     
     if page == "Upload CSV":
         st.subheader('Upload CSV')
-        st.write("File uploaded successfully.")
+        st.write("File uploaded successfully. Now pick a country from the 'Submit Country' tab.")
+    
+    elif page == "Submit Country":
+        st.subheader('Submit Country')
+        countries_df = pd.read_csv('bin/countries.csv')
+        if 'Country' in countries_df.columns:
+            country_list = countries_df['Country'].tolist()
+
     
     elif page == "Summary Statistics":
         # Display summary statistics
@@ -103,19 +109,19 @@ if uploaded_file is not None:
         st.image(histogram_paths[selected_column])
     
     elif page == "Interactive Map":
-        st.subheader('Interactive World Map')
+        st.subheader('Isolate Locations')
         
 else:
     st.write("Please upload a CSV file to proceed.")
 
 if page == "Interactive Map":
-    st.subheader('Isolate Locations')
+    st.subheader('Legend \n Blue = pleomorphic, Red = monomorphic, Green = Submitted Country')
     meta_data = pd.read_csv('ml/meta_data.csv')
     
     if 'Competence' in meta_data.columns:
         # Create a fixed color map for competence levels
         competence_levels = meta_data['Competence'].unique()
-        color_map = {level: [int(hash(level) % 256), int((hash(level) // 256) % 256), int((hash(level) // 200) % 256)] for level in competence_levels}
+        color_map = {level: [0, 0, 255] if i % 2 == 0 else [255, 0, 0] for i, level in enumerate(competence_levels)}
         
         # Add color column to the country data
         country_data = meta_data[['Country', 'lat', 'lon', 'Competence']].dropna()
@@ -125,6 +131,17 @@ if page == "Interactive Map":
         jitter_amount = 1
         country_data['lat'] += np.random.uniform(-jitter_amount, jitter_amount, size=len(country_data))
         country_data['lon'] += np.random.uniform(-jitter_amount, jitter_amount, size=len(country_data))
+        
+        # Add the submitted country with a unique color
+        selected_country = st.sidebar.text_input("Enter the country name to highlight on the map")
+        if selected_country:
+            countries_df = pd.read_csv('bin/countries.csv')
+            submitted_country_data = countries_df[countries_df['Country'] == selected_country]
+            if not submitted_country_data.empty:
+                submitted_country_data = submitted_country_data[['Country', 'lat', 'lon']].dropna()
+                submitted_country_data['Competence'] = 'Submitted Country'
+                submitted_country_data['color'] = [[0, 255, 0]]  # Green for the submitted country
+                country_data = pd.concat([country_data, submitted_country_data], ignore_index=True)
         
         # Create a PyDeck layer for the map
         layer = pdk.Layer(
