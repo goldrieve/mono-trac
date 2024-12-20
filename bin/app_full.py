@@ -72,7 +72,7 @@ def process_dna(header, sequence):
         st.warning("Warning: The length of the DNA sequence is not divisible by 3. Some codons may be incomplete and will be ignored.")
 
     codons = [sequence[i:i+3] for i in range(0, len(sequence), 3)]
-
+    
     valid_codons = []
     for codon in codons:
         if all(nucleotide in 'ATCG' for nucleotide in codon):
@@ -225,9 +225,9 @@ st.title('mono-trac')
 
 # Sidebar for navigation
 if 'results' not in st.session_state:
-    page = st.sidebar.selectbox("Choose a page", ["Upload FASTA"])
+    page = st.sidebar.selectbox("", [""])
 else:
-    page = st.sidebar.selectbox("Choose a page", ["Submit Country", "Prediction", "Summary Statistics", "Nucleotide Counts"])
+    page = st.sidebar.selectbox("Results", ["Submit Country", "Prediction", "Verbose ML working", "Summary Statistics", "Nucleotide Counts"])
 
 # File uploader
 if 'results' not in st.session_state:
@@ -248,10 +248,7 @@ if 'results' in st.session_state:
     proba = st.session_state.proba
     output_file = st.session_state.output_file
     
-    if page == "Submit Country":
-        st.subheader('Isolate Locations')
-    
-    elif page == "Prediction":
+    if page == "Prediction":
         # Display histograms in a dropdown tab
         st.subheader('Developmental Competence Prediction')
         st.write(f"Prediction: {prediction}")
@@ -289,6 +286,22 @@ if 'results' in st.session_state:
         
         selected_column = st.selectbox('Select a column to view its histogram.\nRed line indicates the new sample.', list(histogram_paths.keys()))
         st.image(histogram_paths[selected_column])
+       
+    elif page == "Verbose ML working":
+        st.subheader('Verbose ML Working')
+        if 'results' in st.session_state:
+            results = st.session_state.results
+            output_file = st.session_state.output_file
+            
+            for identifier, summary in results.items():
+                st.text(f"\nAnalysing {identifier}\n")
+                st.text(f"Nucleotide counts\n{summary}\n")
+
+
+            st.text(f"Prediction: {prediction}")
+            st.text(f"Results saved to {output_file}\n")
+        else:
+            st.warning("No results available. Please upload a FASTA file first.")
 
 if page == "Submit Country":
     st.subheader('Legend \n Blue = pleomorphic, Red = monomorphic, Green = Submitted Country')
@@ -309,7 +322,7 @@ if page == "Submit Country":
         country_data['lon'] += np.random.uniform(-jitter_amount, jitter_amount, size=len(country_data))
         
         # Add the submitted country with a unique color
-        selected_country = st.sidebar.text_input("Enter the country name to highlight on the map")
+        selected_country = st.sidebar.text_input("Enter the country name to highlight on the map", key="highlight_country")
         if selected_country:
             countries_df = pd.read_csv('bin/countries.csv')
             submitted_country_data = countries_df[countries_df['Country'] == selected_country]
@@ -319,6 +332,8 @@ if page == "Submit Country":
                 submitted_country_data['color'] = [[0, 255, 0]]  # Green for the submitted country
                 submitted_country_data['isolate'] = 'Submitted Country'
                 country_data = pd.concat([country_data, submitted_country_data], ignore_index=True)
+            if not submitted_country_data.empty:
+                st.success("Country submitted. Click on the 'Results' menu on the left.", icon="✅")
         
         # Create a PyDeck layer for the map
         layer = pdk.Layer(
