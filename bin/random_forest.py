@@ -6,10 +6,10 @@ import joblib
 import os
 
 # Specify the input directory containing the CSV files
-input_dir = '/Users/goldriev/mono-trac/ml/ml_data/'
+input_dir = 'ml/ml_data/'
 
 # Specify the output file path
-output_file = '/Users/goldriev/mono-trac/ml/ml_data/combined/combined.csv'
+output_file = 'ml/ml_data/combined/combined.csv'
 
 # List to hold individual DataFrames
 dataframes = []
@@ -27,10 +27,12 @@ combined_df = pd.concat(dataframes, ignore_index=True)
 # Save the combined DataFrame to a new CSV file
 combined_df.to_csv(output_file, index=False)
 
-meta_data = pd.read_csv('/Users/goldriev/mono-trac/ml/meta_data.csv')
+meta_data = pd.read_csv('ml/meta_data.csv')
 
 # Merge combined_df with meta_data on the column 'isolate'
 df = pd.merge(meta_data, combined_df, on='isolate')
+
+df = df.drop(columns=['Country'])
 
 # Display the merged DataFrame
 df.head()
@@ -51,6 +53,9 @@ y = data['Competence']
 
 # Convert target column to numerical values
 y = y.map({'Pleomorphic': 1, 'Monomorphic': 0})
+
+# Handle missing values by filling them with the mean of each column
+X = X.fillna(0)
 
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)

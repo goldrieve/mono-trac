@@ -6,10 +6,10 @@ import os
 import xgboost as xgb
 
 # Specify the input directory containing the CSV files
-input_dir = '/Users/goldriev/mono-trac/ml/ml_data/'
+input_dir = 'ml/ml_data'
 
 # Specify the output file path
-output_file = '/Users/goldriev/mono-trac/ml/ml_data/combined/combined.csv'
+output_file = 'ml/ml_data/combined/combined.csv'
 
 # List to hold individual DataFrames
 dataframes = []
@@ -27,10 +27,12 @@ combined_df = pd.concat(dataframes, ignore_index=True)
 # Save the combined DataFrame to a new CSV file
 combined_df.to_csv(output_file, index=False)
 
-meta_data = pd.read_csv('/Users/goldriev/mono-trac/ml/meta_data.csv')
+meta_data = pd.read_csv('ml/meta_data.csv')
 
 # Merge combined_df with meta_data on the column 'isolate'
 df = pd.merge(meta_data, combined_df, on='isolate')
+
+df = df.drop(columns=['Country'])
 
 # Display the merged DataFrame
 df.head()
@@ -62,9 +64,6 @@ dtest = xgb.DMatrix(X_test, label=y_test)
 # Set up parameters for xgboost
 params = {
     'objective': 'binary:logistic',  # For binary classification
-    'max_depth': 6,
-    'eta': 0.3,
-    'eval_metric': 'logloss'
 }
 
 bst = xgb.train(params, dtrain, num_boost_round=100, evals=[(dtest, 'test')], early_stopping_rounds=10)

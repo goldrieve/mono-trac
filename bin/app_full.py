@@ -7,6 +7,7 @@ import pydeck as pdk
 import csv
 import joblib
 import re
+import xgboost as xgb
 
 def clean_fasta_file(file_path):
     with open(file_path, 'r') as file:
@@ -141,14 +142,21 @@ def process_fasta(uploaded_file):
         writer.writerow(['isolate'] + [f"{identifier}_{isolate}" for identifier in results for isolate in rows])
         writer.writerow([os.path.basename(file_path).split('.')[0]] + [round(results[identifier][isolate], 5) for identifier in results for isolate in rows])
 
-    mod = joblib.load('ml/model/random_forest_model.pkl')
+    mod = joblib.load('ml/model/xgboost_model.pkl')
     new_data = pd.read_csv(output_file)
+    new_data['lat'] = 0
+    new_data['lon'] = 0
+    columns = ['lat', 'lon'] + [col for col in new_data.columns if col not in ['lat', 'lon']]
+    new_data = new_data[columns]
     new_data_features = new_data.drop(columns=['isolate'])
-    predictions = mod.predict(new_data_features)
+    dmatrix_data = xgb.DMatrix(new_data_features)
+    predictions = mod.predict(dmatrix_data)
     predictions_binary = ['Pleomorphic' if pred > 0.5 else 'Monomorphic' for pred in predictions]
-    proba = mod.predict_proba(new_data_features)
-
-    return results, predictions_binary[0], proba[0], output_file
+    raw_scores = mod.predict(dmatrix_data, output_margin=True)
+    proba = 1 / (1 + np.exp(-raw_scores))
+    proba_dict = {'Pleomorphic': round(proba[0], 3), 'Monomorphic': round(1 - proba[0], 3)}
+    proba_str = f"Pleomorphic: {proba_dict['Pleomorphic']:.3f}, Monomorphic: {proba_dict['Monomorphic']:.3f}"
+    return results, predictions_binary[0], proba_str, output_file
 
 def process_data(uploaded_file):
     # Load data
@@ -227,7 +235,7 @@ st.title('mono-trac')
 if 'results' not in st.session_state:
     page = st.sidebar.selectbox("", [""])
 else:
-    page = st.sidebar.selectbox("Results", ["Submit Country", "Prediction", "Verbose ML working", "Summary Statistics", "Nucleotide Counts"])
+    page = st.sidebar.selectbox("Results", ["Submit Country", "Prediction", "Summary Statistics", "Nucleotide Counts","Verbose ML working"])
 
 # File uploader
 if 'results' not in st.session_state:
@@ -249,10 +257,10 @@ if 'results' in st.session_state:
     output_file = st.session_state.output_file
     
     if page == "Prediction":
-        # Display histograms in a dropdown tab
-        st.subheader('Developmental Competence Prediction')
-        st.write(f"Prediction: {prediction}")
+        st.subheader(f"{prediction.upper()}")
+        st.write(f"Based on an XGBoost model, built using nucleotide usage for genes known to mutate in previous monomorphic outreaks, we predict your isolate is {prediction}.")
         st.write(f"Probability: {proba}")
+        st.write(f"Please continue to the following tabs for a more detailed breakdown of the data.")
 
     elif page == "Summary Statistics":
         # Display summary statistics
@@ -270,7 +278,7 @@ if 'results' in st.session_state:
         st.write(summary_stats)
         numeric_columns = pd.read_csv(combined_data_path).select_dtypes(include=[np.number]).columns
         st.line_chart(pd.read_csv(combined_data_path).set_index('isolate')[numeric_columns])
-    
+        
     elif page == "Nucleotide Counts":
         # Display histograms in a dropdown tab
         st.subheader('Nucleotide Counts')
@@ -288,18 +296,21 @@ if 'results' in st.session_state:
         st.image(histogram_paths[selected_column])
        
     elif page == "Verbose ML working":
-        st.subheader('Verbose ML Working')
+        st.subheader('Verbose XGBoost Working')
         if 'results' in st.session_state:
-            results = st.session_state.results
-            output_file = st.session_state.output_file
+            with open('ml/model/xgb.log', 'r') as file:
+                results = st.session_state.results
+                output_file = st.session_state.output_file
             
-            for identifier, summary in results.items():
-                st.text(f"\nAnalysing {identifier}\n")
-                st.text(f"Nucleotide counts\n{summary}\n")
-
-
-            st.text(f"Prediction: {prediction}")
-            st.text(f"Results saved to {output_file}\n")
+                for identifier, summary in results.items():
+                    st.text(f"\nAnalysing {identifier}\n")
+                    st.text(f"Nucleotide counts\n{summary}\n")
+                st.text(f"Prediction: {prediction}")
+                st.text(f"Results saved to {output_file}\n")
+                
+                st.subheader('XGBoost Model')
+                xgb_log_contents = file.read()
+                st.code(xgb_log_contents, language='text')
         else:
             st.warning("No results available. Please upload a FASTA file first.")
 
