@@ -1,84 +1,84 @@
-﻿isolate,Subspecies,Type,Subgenus,Competence,Country,lat,lon
-927,T.b.brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,0,,
-940,T.b.equiperdum,T. b. equiperdum type OVI,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674
-280104,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Indonesia,-0.789275,113.921326
-108AT,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663
-108BT,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663
-15BT-relapse,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663
-340AT,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663
-348BT,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663
-57AT,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663
-ABBA,T.b. gambiense II,T.b. gambiense II,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705
-AGAL-CI-78-TCH312,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705
-Alfort,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,
-American-Strain,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,
-AnTat-12-1S,T.b. rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,Rwanda,-1.940278,29.873888
-AnTat-3-1,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,
-AnTat-3-3,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,
-ATCC-30019,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,
-ATCC-30023,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,
-ATCC30019,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,
-BIM-AnTat-8-1-P8,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Cameroon,7.369722,12.354722
-Bosendja,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663
-BoTat-1-1,T.b.equiperdum,T. b. equiperdum type BoTat,Trypanozoon  ,Monomorphic,Morocco,31.791702,-7.09262
-Canadian-Strain,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,
-Colombia,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Colombia,4.570868,-74.297333
-Dodola_943,T.b.equiperdum,T. b. equiperdum type OVI,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674
-E28,T.b.equiperdum,T. b. equiperdum type BoTat,Trypanozoon  ,Monomorphic,Italy,41.871941,12.56738
-EATRO2340,T.b.rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,0,,
-EATRO3,T.b.rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,0,,
-FEO,T.b. gambiense II,T.b. gambiense II,Trypanozoon  ,Pleomorphic,Togo,8.619543,0.824782
-FEO-AnTat-16-1,T.b. gambiense II,T.b. gambiense II,Trypanozoon  ,Pleomorphic,Togo,8.619543,0.824782
-GMOM-ZM-83-TRPZ-317,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Zambia,-13.133897,27.849333
-GPAP-CI-82-KP10-29,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705
-HAMBURG,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,
-IVMt1,T.b.evansi,T. b. evansi type C,Trypanozoon  ,Monomorphic,Mongolia,46.862495,103.846657
-Jua,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Cameroon,7.369722,12.354722
-Kazakstan,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Kazachstan,51.177601,71.432999
-Kenya,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Kenya,-0.023559,37.906193
-LIGO,T.b. gambiense II,T.b. gambiense II,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705
-LiTat-1-5-P9,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705
-LOGRA,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663
-MBA,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663
-MBO-NG-74-R10,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Nigeria,9.081999,8.675277
-MBOT-GM-77-GB2,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,The Gambia,13.45129,-16.573
-MCAM-ET-2013-MU-01,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674
-MCAM-ET-2013-MU-02,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674
-MCAM-ET-2013-MU-04,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674
-MCAM-ET-2013-MU-05,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674
-MCAM-ET-2013-MU-09,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674
-MCAM-ET-2013-MU-14,T.b.evansi,T. b. evansi type B,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674
-MCAM-ET-2013-MU-17,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674
-MCAP-CI-91-BALEA-2,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705
-Merzouga-56,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Morocco,31.791702,-7.09262
-MHOM-SD-82-BIYAMINA,T.b. rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,South Sudan,6.876992,31.306978
-MHOM-SD-82-MUSIKIA-cloneA,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,South Sudan,6.876992,31.306978
-MHOM-ZM-80-TRPZ-23,T.b. rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,Zambia,-13.133897,27.849333
-MHOM-ZM-83-TRPZ-349,T.b. rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,Zambia,-13.133897,27.849333
-MSUS-CI-78-TSW-157,T.b. gambiense II,T.b. gambiense II,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705
-MSUS-CI-78-TSW382,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705
-MSUS-CI-82-TSW62,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705
-MSUS-CI-83-TSW-11,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705
-MU09,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674
-MU10,T.b.evansi,T. b. evansi type B,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674
-Nabe,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663
-NDMI,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Republic of Congo,-4.32153,15.31185
-NKOUA,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Republic of Congo,-4.32153,15.31185
-OUSOU,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705
-OVI,T.b.equiperdum,T. b. equiperdum type OVI,Trypanozoon  ,Monomorphic,South Africa,-30.559483,22.937506
-Pakwa,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663
-Philippines,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,The Philippines,14.58226,120.9748
-RoTat_1.2,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,
-ROUPO-VAVOUA--80-MURAZ-14,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705
-Rumphi,T.b. rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,Malawi,-13.254308,34.301525
-STIB-816,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,China,35.86166,104.195396
-STIB-851,T.b. rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,Uganda,1.373333,32.290276
-STIB247,T.b.brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,0,,
-STIB386,T.b.gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,0,,
-STIB805,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,
-STIB818,T.b.evansi.type.A,T. b. evansi type A,Trypanozoon  ,Monomorphic,China,35.86166,104.195396
-STIB900,T.b.rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,0,,
-SVP,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,
-Te-Ap-N-D1,T.b.equiperdum,T. b. equiperdum type OVI,Trypanozoon  ,Monomorphic,Venezuela,6.42375,-66.589729
-EATRO_1125_AnTat_1.1_90:13,T.b.brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Uganda,1.373333,32.290276
-Zagora-I-17,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Morocco,31.791702,-7.09262
+﻿isolate,Subspecies,Type,Subgenus,Competence,Country,lat,lon,colour
+927,T.b.brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,0,,,pink
+940,T.b.equiperdum,T. b. equiperdum type OVI,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674,blue
+280104,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Indonesia,-0.789275,113.921326,orange
+108AT,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663,green
+108BT,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663,green
+15BT-relapse,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663,green
+340AT,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663,green
+348BT,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663,green
+57AT,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663,green
+ABBA,T.b. gambiense II,T.b. gambiense II,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705,purple
+AGAL-CI-78-TCH312,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705,pink
+Alfort,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,,orange
+American-Strain,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,,orange
+AnTat-12-1S,T.b. rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,Rwanda,-1.940278,29.873888,green
+AnTat-3-1,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,,orange
+AnTat-3-3,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,,orange
+ATCC-30019,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,,orange
+ATCC-30023,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,,orange
+ATCC30019,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,,orange
+BIM-AnTat-8-1-P8,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Cameroon,7.369722,12.354722,green
+Bosendja,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663,green
+BoTat-1-1,T.b.equiperdum,T. b. equiperdum type BoTat,Trypanozoon  ,Monomorphic,Morocco,31.791702,-7.09262,red
+Canadian-Strain,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,,orange
+Colombia,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Colombia,4.570868,-74.297333,orange
+Dodola_943,T.b.equiperdum,T. b. equiperdum type OVI,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674,blue
+E28,T.b.equiperdum,T. b. equiperdum type BoTat,Trypanozoon  ,Monomorphic,Italy,41.871941,12.56738,red
+EATRO2340,T.b.rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,0,,,green
+EATRO3,T.b.rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,0,,,green
+FEO,T.b. gambiense II,T.b. gambiense II,Trypanozoon  ,Pleomorphic,Togo,8.619543,0.824782,purple
+FEO-AnTat-16-1,T.b. gambiense II,T.b. gambiense II,Trypanozoon  ,Pleomorphic,Togo,8.619543,0.824782,purple
+GMOM-ZM-83-TRPZ-317,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Zambia,-13.133897,27.849333,pink
+GPAP-CI-82-KP10-29,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705,pink
+HAMBURG,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,,orange
+IVMt1,T.b.evansi,T. b. evansi type C,Trypanozoon  ,Monomorphic,Mongolia,46.862495,103.846657,grey
+Jua,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Cameroon,7.369722,12.354722,green
+Kazakstan,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Kazachstan,51.177601,71.432999,orange
+Kenya,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Kenya,-0.023559,37.906193,orange
+LIGO,T.b. gambiense II,T.b. gambiense II,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705,purple
+LiTat-1-5-P9,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705,green
+LOGRA,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663,green
+MBA,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663,green
+MBO-NG-74-R10,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Nigeria,9.081999,8.675277,pink
+MBOT-GM-77-GB2,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,The Gambia,13.45129,-16.573,pink
+MCAM-ET-2013-MU-01,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674,orange
+MCAM-ET-2013-MU-02,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674,orange
+MCAM-ET-2013-MU-04,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674,orange
+MCAM-ET-2013-MU-05,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674,orange
+MCAM-ET-2013-MU-09,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674,orange
+MCAM-ET-2013-MU-14,T.b.evansi,T. b. evansi type B,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674,grey
+MCAM-ET-2013-MU-17,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674,orange
+MCAP-CI-91-BALEA-2,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705,pink
+Merzouga-56,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Morocco,31.791702,-7.09262,orange
+MHOM-SD-82-BIYAMINA,T.b. rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,South Sudan,6.876992,31.306978,green
+MHOM-SD-82-MUSIKIA-cloneA,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,South Sudan,6.876992,31.306978,green
+MHOM-ZM-80-TRPZ-23,T.b. rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,Zambia,-13.133897,27.849333,green
+MHOM-ZM-83-TRPZ-349,T.b. rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,Zambia,-13.133897,27.849333,green
+MSUS-CI-78-TSW-157,T.b. gambiense II,T.b. gambiense II,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705,purple
+MSUS-CI-78-TSW382,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705,pink
+MSUS-CI-82-TSW62,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705,pink
+MSUS-CI-83-TSW-11,T.b. brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705,pink
+MU09,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674,orange
+MU10,T.b.evansi,T. b. evansi type B,Trypanozoon  ,Monomorphic,Ethiopia,9.145,40.489674,grey
+Nabe,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663,green
+NDMI,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Republic of Congo,-4.32153,15.31185,green
+NKOUA,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Republic of Congo,-4.32153,15.31185,green
+OUSOU,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705,green
+OVI,T.b.equiperdum,T. b. equiperdum type OVI,Trypanozoon  ,Monomorphic,South Africa,-30.559483,22.937506,blue
+Pakwa,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Democratic Republic of the Congo,-4.038333,21.758663,green
+Philippines,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,The Philippines,14.58226,120.9748,orange
+RoTat_1.2,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,,orange
+ROUPO-VAVOUA--80-MURAZ-14,T.b. gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,Côte d'Ivoire,5.34939,-4.01705,green
+Rumphi,T.b. rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,Malawi,-13.254308,34.301525,green
+STIB-816,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,China,35.86166,104.195396,orange
+STIB-851,T.b. rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,Uganda,1.373333,32.290276,green
+STIB247,T.b.brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,0,,,pink
+STIB386,T.b.gambiense,T.b.gambiense,Trypanozoon  ,Pleomorphic,0,,,green
+STIB805,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,,orange
+STIB818,T.b.evansi.type.A,T. b. evansi type A,Trypanozoon  ,Monomorphic,China,35.86166,104.195396,orange
+STIB900,T.b.rhodesiense,T.b.rhodesiense,Trypanozoon  ,Pleomorphic,0,,,green
+SVP,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,0,,,orange
+Te-Ap-N-D1,T.b.equiperdum,T. b. equiperdum type OVI,Trypanozoon  ,Monomorphic,Venezuela,6.42375,-66.589729,blue
+EATRO_1125_AnTat_1.1_90:13,T.b.brucei,T.b.brucei,Trypanozoon  ,Pleomorphic,Uganda,1.373333,32.290276,pink
+Zagora-I-17,T.b.evansi,T. b. evansi type A,Trypanozoon  ,Monomorphic,Morocco,31.791702,-7.09262,orange
