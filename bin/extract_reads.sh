@@ -1,9 +1,15 @@
 #!/bin/bash
 
+# Check if the correct number of arguments is provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <reads_file>"
+    exit 1
+fi
+
 # Define the paths to the input files and output directory
-READS_FILE="/Volumes/matthews/Guy/Raw_data/cobalt/genome/nanopore_cow/EOX_908_12_190623.fastq.gz"
-REFERENCE_FILE="/Users/goldriev/mono-trac/primer_design/targets.fasta"
-OUTPUT_DIR="/Users/goldriev/mono-trac/test_reads/"
+READS_FILE=$1
+REFERENCE_FILE="/Users/goldriev/mono-trac/primer_design/targets_sequence.fasta"
+OUTPUT_DIR="/Users/goldriev/mono-trac/test_reads"
 SAM_FILE="${OUTPUT_DIR}/mapped_reads.sam"
 BAM_FILE="${OUTPUT_DIR}/mapped_reads.bam"
 SORTED_BAM_FILE="${OUTPUT_DIR}/mapped_reads_sorted.bam"

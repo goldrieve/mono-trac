@@ -8,6 +8,11 @@ import csv
 import joblib
 import re
 import xgboost as xgb
+import subprocess
+from Bio import SeqIO
+from Bio.Seq import Seq
+from Bio.SeqRecord import SeqRecord
+from ete3 import Tree, TreeStyle
 
 def clean_fasta_file(file_path):
     with open(file_path, 'r') as file:
@@ -235,11 +240,13 @@ st.title('mono-trac')
 if 'results' not in st.session_state:
     page = st.sidebar.selectbox("", [""])
 else:
-    page = st.sidebar.selectbox("Results", ["Submit Country", "Prediction", "Summary Statistics", "Nucleotide Counts","Verbose ML working"])
+    page = st.sidebar.selectbox("Results", ["Submit Country", "Prediction", "Summary Statistics", "Nucleotide Counts", "Verbose ML Working", "Phylogenetic Tree"])
 
 # File uploader
 if 'results' not in st.session_state:
     uploaded_file = st.file_uploader("Choose a FASTA file", type=["fasta", ".fa", ".fas"])
+    if uploaded_file is not None:
+        st.session_state.uploaded_file = uploaded_file
 
     if uploaded_file is not None:
         results, prediction, proba, output_file = process_fasta(uploaded_file)
@@ -295,25 +302,114 @@ if 'results' in st.session_state:
         selected_column = st.selectbox('Select a column to view its histogram.\nRed line indicates the new sample.', list(histogram_paths.keys()))
         st.image(histogram_paths[selected_column])
        
-    elif page == "Verbose ML working":
+    elif page == "Verbose ML Working":
         st.subheader('Verbose XGBoost Working')
         if 'results' in st.session_state:
-            with open('ml/model/xgb.log', 'r') as file:
-                results = st.session_state.results
-                output_file = st.session_state.output_file
+            results = st.session_state.results
+            output_file = st.session_state.output_file
             
-                for identifier, summary in results.items():
-                    st.text(f"\nAnalysing {identifier}\n")
-                    st.text(f"Nucleotide counts\n{summary}\n")
-                st.text(f"Prediction: {prediction}")
-                st.text(f"Results saved to {output_file}\n")
-                
-                st.subheader('XGBoost Model')
-                xgb_log_contents = file.read()
-                st.code(xgb_log_contents, language='text')
+            for identifier, summary in results.items():
+                st.text(f"\nAnalysing {identifier}\n")
+                st.text(f"Nucleotide counts\n{summary}\n")
+            st.text(f"Prediction: {prediction}")
+            st.text(f"Results saved to {output_file}\n")
+            
+            st.subheader('XGBoost Model')
+            try:
+                with open('ml/model/xgb.log', 'r') as file:
+                    xgb_log_contents = file.read()
+                    st.code(xgb_log_contents, language='text')
+            except FileNotFoundError:
+                st.warning("XGBoost log file not found.")
         else:
             st.warning("No results available. Please upload a FASTA file first.")
 
+    elif page == "Phylogenetic Tree":
+        st.subheader('Tree Image')
+        
+        if 'results' in st.session_state:
+            uploaded_file = st.session_state.uploaded_file
+
+        # Define the directory containing the FASTA files
+        fasta_dir = 'isolate_fasta/'
+        uploaded_file_path = f"/tmp/{uploaded_file.name}"
+        os.makedirs(fasta_dir, exist_ok=True)
+        with open(os.path.join(fasta_dir, uploaded_file.name), "wb") as f:
+            f.write(uploaded_file.getbuffer())
+        output_dir = 'workdir'
+        os.makedirs(output_dir, exist_ok=True)
+
+        # Step 1: Concatenate all sequences from each file into a single sequence
+        concatenated_fasta = os.path.join(output_dir, 'concatenated_sequences.fasta')
+        with open(concatenated_fasta, 'w') as outfile:
+            for fasta_file in os.listdir(fasta_dir):
+                if fasta_file.endswith('.fas'):
+                    file_path = os.path.join(fasta_dir, fasta_file)
+                    concatenated_sequence = ''
+                    for record in SeqIO.parse(file_path, 'fasta'):
+                        concatenated_sequence += str(record.seq)
+                    # Create a new record with the concatenated sequence
+                    new_record = SeqRecord(
+                        Seq(concatenated_sequence),
+                        id=fasta_file,
+                        description=''
+                    )
+                    SeqIO.write(new_record, outfile, 'fasta')
+
+        # Step 2: Align the sequences using MAFFT
+        aligned_fasta = os.path.join(output_dir, 'aligned_sequences.fasta')
+        subprocess.run(['mafft', '--anysymbol', '--auto', concatenated_fasta], stdout=open(aligned_fasta, 'w'))
+
+        # Step 3: Generate the phylogenetic tree using FastTree
+        tree_file = os.path.join(output_dir, 'phylogenetic_tree.tree')
+        subprocess.run(['fasttree', '-nt', aligned_fasta], stdout=open(tree_file, 'w'))
+
+        # Read the Newick string from the file
+        with open(tree_file, 'r') as file:
+            newick_str = file.read().strip()
+
+        # Create a tree from the Newick string
+        tree = Tree(newick_str)
+
+        # Customize the tree style
+        ts = TreeStyle()
+        ts.show_leaf_name = True
+        ts.mode = "c"  # Circular tree layout
+        ts.root_opening_factor = 1.0  # Make the tree unrooted
+
+        # Render the tree to a file
+        output_file = '/Users/goldriev/mono-trac/bin/tree.png'
+        tree.render(output_file, tree_style=ts)
+
+        st.image(output_file, caption='Phylogenetic Tree')
+
+        # Step 2: Align the sequences using MAFFT
+        aligned_fasta = os.path.join(output_dir, 'aligned_sequences.fasta')
+        subprocess.run(['mafft', '--anysymbol', '--auto', concatenated_fasta], stdout=open(aligned_fasta, 'w'))
+
+        # Step 3: Generate the phylogenetic tree using FastTree
+        tree_file = os.path.join(output_dir, 'phylogenetic_tree.tree')
+        subprocess.run(['fasttree', '-nt', aligned_fasta], stdout=open(tree_file, 'w'))
+
+        # Read the Newick string from the file
+        with open(tree_file, 'r') as file:
+            newick_str = file.read().strip()
+
+        # Create a tree from the Newick string
+        tree = Tree(newick_str)
+
+        # Customize the tree style
+        ts = TreeStyle()
+        ts.show_leaf_name = True
+        ts.mode = "c"  # Circular tree layout
+        ts.root_opening_factor = 1.0  # Make the tree unrooted
+
+        # Render the tree to a file
+        output_file = '/Users/goldriev/mono-trac/bin/tree.png'
+        tree.render(output_file, tree_style=ts)
+
+        st.image(output_file, caption='Phylogenetic Tree')
+        
 if page == "Submit Country":
     st.subheader('Legend \n Blue = pleomorphic, Red = monomorphic, Green = Submitted Country')
     meta_data = pd.read_csv('ml/meta_data.csv')
