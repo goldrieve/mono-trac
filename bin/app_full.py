@@ -9,6 +9,9 @@ import joblib
 import re
 import xgboost as xgb
 import subprocess
+import matplotlib
+import Bio
+import ete3
 from Bio import SeqIO
 from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
@@ -240,7 +243,7 @@ st.title('mono-trac')
 if 'results' not in st.session_state:
     page = st.sidebar.selectbox("", [""])
 else:
-    page = st.sidebar.selectbox("Results", ["Submit Country", "Prediction", "Summary Statistics", "Nucleotide Counts", "Verbose ML Working", "Phylogenetic Tree"])
+    page = st.sidebar.selectbox("Results", ["Submit Country", "Prediction", "Summary Statistics", "Nucleotide Counts", "Verbose ML Working", "Phylogenetic Tree", "Tool Versions"])
 
 # File uploader
 if 'results' not in st.session_state:
@@ -534,3 +537,27 @@ if page == "Submit Country":
         st.pydeck_chart(pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip={"text": "{isolate} \n {Type}"}))
     else:
         st.warning("The meta_data.csv file does not contain the required column: 'Competence'.")
+    
+
+def get_tool_versions():
+            tools = {
+                "Python": subprocess.run(["python", "--version"], capture_output=True, text=True).stdout.strip(),
+                "Streamlit": st.__version__,
+                "Pandas": pd.__version__,
+                "Matplotlib": matplotlib.__version__,
+                "Numpy": np.__version__,
+                "PyDeck": pdk.__version__,
+                "Joblib": joblib.__version__,
+                "XGBoost": xgb.__version__,
+                "Biopython": Bio.__version__,
+                "ETE3": ete3.__version__,
+                "Mafft": subprocess.run("mafft --version", capture_output=True, text=True, shell=True).stdout.strip().split('\n')[0].split(' ')[0],
+                "FastTree": subprocess.run("fasttree -version", capture_output=True, text=True, shell=True).stdout.strip().split('\n')[0].split(' ')[0]
+            }
+            return tools
+
+if page == "Tool Versions":
+            st.subheader('Tool Versions')
+            tool_versions = get_tool_versions()
+            tool_versions_df = pd.DataFrame(tool_versions.items(), columns=["Tool", "Version"])
+            st.table(tool_versions_df)
