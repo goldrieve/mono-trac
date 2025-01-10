@@ -15,7 +15,7 @@ Mono-Trac is a Streamlit-based web application for analyzing DNA sequences, pred
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/yourusername/mono-trac.git
+   git clone https://github.com/goldriev/mono-trac.git
    cd mono-trac
    
 2. **Create a virtual environment:
@@ -72,4 +72,4 @@ XGBoost
 Biopython
 ETE Toolkit
 Contact
-For any questions or feedback, please contact yourname@example.com.
+For any questions or feedback, please contact guy.oldrieve@ed.ac.uk
