@@ -109,11 +109,17 @@ def process_dna(header, sequence):
             counts[position][nucleotide] = round(counts[position][nucleotide], 5)
 
     average_A = round((counts['first']['A'] + counts['second']['A'] + counts['third']['A']) / 3, 5)
+    a_text = (("A: 1st = " + str(counts['first']['A']) + ", 2nd = " + str(counts['second']['A']) + ", 3rd = " + str(counts['third']['A'])))
     average_T = round((counts['first']['T'] + counts['second']['T'] + counts['third']['T']) / 3, 5)
+    t_text = (("T: 1st = " + str(counts['first']['T']) + ", 2nd = " + str(counts['second']['T']) + ", 3rd = " + str(counts['third']['T'])))
     average_C = round((counts['first']['C'] + counts['second']['C'] + counts['third']['C']) / 3, 5)
+    c_text = (("C: 1st = " + str(counts['first']['C']) + ", 2nd = " + str(counts['second']['C']) + ", 3rd = " + str(counts['third']['C'])))
     average_G = round((counts['first']['G'] + counts['second']['G'] + counts['third']['G']) / 3, 5)
+    g_text = (("G: 1st = " + str(counts['first']['G']) + ", 2nd = " + str(counts['second']['G']) + ", 3rd = " + str(counts['third']['G'])))
 
-    return {'A': average_A, 'T': average_T, 'C': average_C, 'G': average_G}
+
+    return {'A': average_A, 'T': average_T, 'C': average_C, 'G': average_G}, valid_codons, a_text, t_text, c_text, g_text
+
 
 @st.cache_data
 def process_fasta(uploaded_file):
@@ -148,7 +154,7 @@ def process_fasta(uploaded_file):
     with open(output_file, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(['isolate'] + [f"{identifier}_{isolate}" for identifier in results for isolate in rows])
-        writer.writerow([os.path.basename(file_path).split('.')[0]] + [round(results[identifier][isolate], 5) for identifier in results for isolate in rows])
+        writer.writerow([os.path.basename(file_path).split('.')[0]] + [round(results[identifier][0][isolate], 5) for identifier in results for isolate in rows])
 
     mod = joblib.load('ml/model/xgboost_model.pkl')
     new_data = pd.read_csv(output_file)
@@ -243,7 +249,7 @@ st.title('mono-trac')
 if 'results' not in st.session_state:
     page = st.sidebar.selectbox("", [""])
 else:
-    page = st.sidebar.selectbox("Results", ["Submit Country", "Prediction", "Summary Statistics", "Nucleotide Counts", "Verbose ML Working", "Phylogenetic Tree", "Tool Versions"])
+    page = st.sidebar.selectbox("Results", ["Submit Country", "Prediction", "Verbose Working", "Nucleotide Counts", "Phylogenetic Tree", "Tool Versions"])
 
 # File uploader
 if 'results' not in st.session_state:
@@ -305,15 +311,21 @@ if 'results' in st.session_state:
         selected_column = st.selectbox('Select a column to view its histogram.\nRed line indicates the new sample.', list(histogram_paths.keys()))
         st.image(histogram_paths[selected_column])
        
-    elif page == "Verbose ML Working":
-        st.subheader('Verbose XGBoost Working')
+    elif page == "Verbose Working":
+        st.subheader('Verbose Working')
         if 'results' in st.session_state:
             results = st.session_state.results
             output_file = st.session_state.output_file
             
             for identifier, summary in results.items():
-                st.text(f"\nAnalysing {identifier}\n")
-                st.text(f"Nucleotide counts\n{summary}\n")
+                st.markdown(f"**Analysing {identifier}**")
+                nucleotide_counts, codons, a_text, t_text, c_text, g_text = summary
+                st.text(f"Codons\n{', '.join(codons)}")
+                st.text(f"Counts\n {a_text}")
+                st.text(f"{t_text}")
+                st.text(f"{c_text}")
+                st.text(f"{g_text}")
+                st.text(f"Average nucleotide counts\n'A': {nucleotide_counts['A']}, 'T': {nucleotide_counts['T']}, 'C': {nucleotide_counts['C']}, 'G': {nucleotide_counts['G']}\n")
             st.text(f"Prediction: {prediction}")
             st.text(f"Results saved to {output_file}\n")
             
@@ -330,7 +342,7 @@ if 'results' in st.session_state:
     elif page == "Phylogenetic Tree":
         st.subheader('Phylogenetic Tree')
         
-        if 'results' in st.session_state:
+        if 'phylogenetic_tree' not in st.session_state:
             uploaded_file = st.session_state.uploaded_file
 
             # Define the directory containing the FASTA files
@@ -476,10 +488,11 @@ if 'results' in st.session_state:
 
             output_file = os.path.expanduser('~/Desktop/tree.png')
             tree.render(output_file, tree_style=ts)
-            st.write(f"Submitted sample = black")
-            st.write(f"T.b.brucei = pink, T.b.gambiense = grey, T.b. gambiense II = purple, T.b.rhodesiense = blue, T.b.evansi type A = green, T.b.evansi type B = red, T.b.equiperdum type OVI = gold, T.b.equiperdum type BoTat = orange")
-            st.image(output_file, caption='Phylogenetic Tree')
-        
+            st.session_state.phylogenetic_tree = output_file
+
+        st.write(f"Submitted sample = black")
+        st.write(f"T.b.brucei = pink, T.b.gambiense = grey, T.b. gambiense II = purple, T.b.rhodesiense = blue, T.b.evansi type A = green, T.b.evansi type B = red, T.b.equiperdum type OVI = gold, T.b.equiperdum type BoTat = orange")
+        st.image(st.session_state.phylogenetic_tree, caption='Phylogenetic Tree')
 if page == "Submit Country":
     st.subheader('Legend \n Blue = pleomorphic, Red = monomorphic, Green = Submitted Country')
     meta_data = pd.read_csv('ml/meta_data.csv')
