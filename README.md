@@ -2,15 +2,6 @@
 
 Mono-Trac is (currently) a Streamlit-based web application for analysing DNA sequences from the mono-trac pannel, predicting isolate developmental competence and outbreak potential using an XGBoost model, and visualising the isolates phylogeny. The app is currently in development, we are working on writing the NextFlow pipeline to generate consenus sequences of the mono-trac genes, required as input for this app, from raw Nanopore reads
 
-## Features
-
-- **FASTA File Upload**: Upload a FASTA file containing DNA sequences.
-- **Nucleotide Counts**: View histograms of nucleotide counts.
-- **Prediction**: Predict isolate outbreak potential using an XGBoost model.
-- **Verbose Working**: Detailed analysis of target sequences.
-- **Phylogenetic Tree**: Generate and visualize phylogenetic trees.
-- **Tool Versions**: Display versions of the tools used in the app.
-
 ## Installation
 
 1. **Clone the repository**:
