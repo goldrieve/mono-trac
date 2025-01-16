@@ -274,6 +274,10 @@ if 'results' in st.session_state:
     
     if page == "Prediction":
         st.subheader(f"{prediction.upper()}")
+        if prediction.upper() == "PLEOMORPHIC":
+            st.write("This isolate does not have outbreak potential.")
+        elif prediction.upper() == "MONOMORPHIC":
+            st.write("This isolate has outbreak potential.")
         st.write(f"Based on an XGBoost model, built using nucleotide usage for genes known to mutate in previous monomorphic outreaks, we predict your isolate is {prediction}.")
         st.write(f"Probability: {proba}")
         st.write(f"Please continue to the following tabs for a more detailed breakdown of the data.")
