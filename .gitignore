@@ -5,3 +5,4 @@ wf-amplicon/output/mapped_reads/alignments
 .DS_Store
 wf-amplicon/output/execution/*.html
 output
+keep

@@ -39,16 +39,17 @@ df.head()
 
 data = df
 
+# Assume the target column is named 'target' and the rest are features
+X = data.drop(columns=['isolate', 'Subspecies', 'Type', 'Subgenus', 'Competence', 'colour', 'Tb927.5.1220_A', 'Tb927.5.1220_T', 'Tb927.5.1220_C', 'Tb927.5.1220_G'])
+
 # Perform basic QC
 print("Data Head:")
-print(data.head())
+print(X.head())
 print("\nData Info:")
-print(data.info())
+print(X.info())
 print("\nData Description:")
-print(data.describe())
+print(X.describe())
 
-# Assume the target column is named 'target' and the rest are features
-X = data.drop(columns=['isolate', 'Subspecies', 'Type', 'Subgenus', 'Competence'])
 y = data['Competence']
 
 # Convert target column to numerical values
