@@ -1,0 +1,147 @@
+Data Head:
+        lat        lon  ...  Tb927.8.3480_C  Tb927.8.3480_G
+0 -4.038333  21.758663  ...         0.22222         0.28626
+1 -4.038333  21.758663  ...         0.22222         0.28626
+2 -4.038333  21.758663  ...         0.22222         0.28626
+3 -4.038333  21.758663  ...         0.22222         0.28626
+4 -4.038333  21.758663  ...         0.22222         0.28626
+
+[5 rows x 74 columns]
+
+Data Info:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 78 entries, 0 to 77
+Data columns (total 74 columns):
+ #   Column            Non-Null Count  Dtype  
+---  ------            --------------  -----  
+ 0   lat               62 non-null     float64
+ 1   lon               62 non-null     float64
+ 2   Tb927.10.13980_A  78 non-null     float64
+ 3   Tb927.10.13980_T  78 non-null     float64
+ 4   Tb927.10.13980_C  78 non-null     float64
+ 5   Tb927.10.13980_G  78 non-null     float64
+ 6   Tb927.10.15300_A  78 non-null     float64
+ 7   Tb927.10.15300_T  78 non-null     float64
+ 8   Tb927.10.15300_C  78 non-null     float64
+ 9   Tb927.10.15300_G  78 non-null     float64
+ 10  Tb927.9.10660_A   78 non-null     float64
+ 11  Tb927.9.10660_T   78 non-null     float64
+ 12  Tb927.9.10660_C   78 non-null     float64
+ 13  Tb927.9.10660_G   78 non-null     float64
+ 14  Tb927.8.3810_A    78 non-null     float64
+ 15  Tb927.8.3810_T    78 non-null     float64
+ 16  Tb927.8.3810_C    78 non-null     float64
+ 17  Tb927.8.3810_G    78 non-null     float64
+ 18  Tb927.10.4720_A   78 non-null     float64
+ 19  Tb927.10.4720_T   78 non-null     float64
+ 20  Tb927.10.4720_C   78 non-null     float64
+ 21  Tb927.10.4720_G   78 non-null     float64
+ 22  Tb927.11.1940_A   78 non-null     float64
+ 23  Tb927.11.1940_T   78 non-null     float64
+ 24  Tb927.11.1940_C   78 non-null     float64
+ 25  Tb927.11.1940_G   78 non-null     float64
+ 26  Tb927.4.980_A     78 non-null     float64
+ 27  Tb927.4.980_T     78 non-null     float64
+ 28  Tb927.4.980_C     78 non-null     float64
+ 29  Tb927.4.980_G     78 non-null     float64
+ 30  Tb927.10.1820_A   78 non-null     float64
+ 31  Tb927.10.1820_T   78 non-null     float64
+ 32  Tb927.10.1820_C   78 non-null     float64
+ 33  Tb927.10.1820_G   78 non-null     float64
+ 34  Tb927.6.3660_A    78 non-null     float64
+ 35  Tb927.6.3660_T    78 non-null     float64
+ 36  Tb927.6.3660_C    78 non-null     float64
+ 37  Tb927.6.3660_G    78 non-null     float64
+ 38  Tb927.1.3230_A    78 non-null     float64
+ 39  Tb927.1.3230_T    78 non-null     float64
+ 40  Tb927.1.3230_C    78 non-null     float64
+ 41  Tb927.1.3230_G    78 non-null     float64
+ 42  Tb927.6.1100_A    78 non-null     float64
+ 43  Tb927.6.1100_T    78 non-null     float64
+ 44  Tb927.6.1100_C    78 non-null     float64
+ 45  Tb927.6.1100_G    78 non-null     float64
+ 46  Tb927.11.3980_A   78 non-null     float64
+ 47  Tb927.11.3980_T   78 non-null     float64
+ 48  Tb927.11.3980_C   78 non-null     float64
+ 49  Tb927.11.3980_G   78 non-null     float64
+ 50  Tb927.6.2630_A    78 non-null     float64
+ 51  Tb927.6.2630_T    78 non-null     float64
+ 52  Tb927.6.2630_C    78 non-null     float64
+ 53  Tb927.6.2630_G    78 non-null     float64
+ 54  Tb927.7.6560_A    78 non-null     float64
+ 55  Tb927.7.6560_T    78 non-null     float64
+ 56  Tb927.7.6560_C    78 non-null     float64
+ 57  Tb927.7.6560_G    78 non-null     float64
+ 58  Tb927.10.2810_A   78 non-null     float64
+ 59  Tb927.10.2810_T   78 non-null     float64
+ 60  Tb927.10.2810_C   78 non-null     float64
+ 61  Tb927.10.2810_G   78 non-null     float64
+ 62  Tb927.3.4350_A    78 non-null     float64
+ 63  Tb927.3.4350_T    78 non-null     float64
+ 64  Tb927.3.4350_C    78 non-null     float64
+ 65  Tb927.3.4350_G    78 non-null     float64
+ 66  Tb927.6.5000_A    78 non-null     float64
+ 67  Tb927.6.5000_T    78 non-null     float64
+ 68  Tb927.6.5000_C    78 non-null     float64
+ 69  Tb927.6.5000_G    78 non-null     float64
+ 70  Tb927.8.3480_A    78 non-null     float64
+ 71  Tb927.8.3480_T    78 non-null     float64
+ 72  Tb927.8.3480_C    78 non-null     float64
+ 73  Tb927.8.3480_G    78 non-null     float64
+dtypes: float64(74)
+memory usage: 45.2 KB
+None
+
+Data Description:
+             lat         lon  ...  Tb927.8.3480_C  Tb927.8.3480_G
+count  62.000000   62.000000  ...       78.000000       78.000000
+mean    6.768147   21.026475  ...        0.221692        0.286506
+std    14.739177   33.232915  ...        0.000801        0.001193
+min   -30.559483  -74.297333  ...        0.219440        0.284840
+25%    -4.038333   -4.017050  ...        0.221722        0.286260
+50%     5.349390   21.758663  ...        0.222040        0.286260
+75%     9.145000   37.005026  ...        0.222220        0.286730
+max    51.177601  120.974800  ...        0.222410        0.291600
+
+[8 rows x 74 columns]
+[0]	test-logloss:0.51728
+[1]	test-logloss:0.39745
+[2]	test-logloss:0.35218
+[3]	test-logloss:0.31117
+[4]	test-logloss:0.28583
+[5]	test-logloss:0.26357
+[6]	test-logloss:0.25256
+[7]	test-logloss:0.24315
+[8]	test-logloss:0.24029
+[9]	test-logloss:0.22576
+[10]	test-logloss:0.23011
+[11]	test-logloss:0.21439
+[12]	test-logloss:0.21278
+[13]	test-logloss:0.21651
+[14]	test-logloss:0.22757
+[15]	test-logloss:0.23802
+[16]	test-logloss:0.23098
+[17]	test-logloss:0.23071
+[18]	test-logloss:0.23049
+[19]	test-logloss:0.23032
+[20]	test-logloss:0.23018
+[21]	test-logloss:0.23007
+[22]	test-logloss:0.22998
+
+Accuracy Score:
+0.9375
+
+Confusion Matrix:
+[[7 1]
+ [0 8]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       1.00      0.88      0.93         8
+           1       0.89      1.00      0.94         8
+
+    accuracy                           0.94        16
+   macro avg       0.94      0.94      0.94        16
+weighted avg       0.94      0.94      0.94        16
+

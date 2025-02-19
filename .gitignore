@@ -1,0 +1,8 @@
+amplicon/
+wf-amplicon/test_reads/
+wf-amplicon/output/mapped_reads/alignments
+.nextflow*
+.DS_Store
+wf-amplicon/output/execution/*.html
+output
+keep

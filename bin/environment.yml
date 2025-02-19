@@ -1,0 +1,19 @@
+name: mono-trac
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - streamlit
+  - pandas
+  - matplotlib
+  - numpy
+  - pydeck
+  - joblib
+  - xgboost
+  - biopython
+  - ete3
+  - pip
+  - xgboost
+  - scikit-learn
+  - fasttree
+  - mafft
