@@ -158,10 +158,10 @@ def process_fasta(uploaded_file):
 
     mod = joblib.load('ml/model/xgboost_model.pkl')
     new_data = pd.read_csv(output_file)
-    new_data['lat'] = 0
-    new_data['lon'] = 0
-    columns = ['lat', 'lon'] + [col for col in new_data.columns if col not in ['lat', 'lon']]
-    new_data = new_data[columns]
+    #new_data['lat'] = 0
+    #new_data['lon'] = 0
+    #columns = ['lat', 'lon'] + [col for col in new_data.columns if col not in ['lat', 'lon']]
+    #new_data = new_data[columns]
     new_data_features = new_data.drop(columns=['isolate'])
     dmatrix_data = xgb.DMatrix(new_data_features)
     predictions = mod.predict(dmatrix_data)
@@ -490,13 +490,14 @@ if 'results' in st.session_state:
 
             # Render the tree to a file
 
-            output_file = os.path.expanduser('~/Desktop/tree.png')
+            output_file = os.path.expanduser('workdir/tree.png')
             tree.render(output_file, tree_style=ts)
             st.session_state.phylogenetic_tree = output_file
 
         st.write(f"Submitted sample = black")
         st.write(f"T.b.brucei = pink, T.b.gambiense = grey, T.b. gambiense II = purple, T.b.rhodesiense = blue, T.b.evansi type A = green, T.b.evansi type B = red, T.b.equiperdum type OVI = gold, T.b.equiperdum type BoTat = orange")
         st.image(st.session_state.phylogenetic_tree, caption='Phylogenetic Tree')
+        
 if page == "Submit Country":
     st.subheader('Legend \n Blue = pleomorphic, Red = monomorphic, Green = Submitted Country')
     meta_data = pd.read_csv('ml/meta_data.csv')
