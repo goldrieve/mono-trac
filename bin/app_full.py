@@ -42,10 +42,23 @@ def remove_gene(content, gene_id):
 
 def sort_fasta_sequences(content):
     gene_order = [
-        'Tb927.10.13980', 'Tb927.10.15300', 'Tb927.9.10660', 'Tb927.8.3810', 'Tb927.10.4720',
-        'Tb927.11.1940', 'Tb927.4.980', 'Tb927.10.1820', 'Tb927.6.3660', 'Tb927.1.3230',
-        'Tb927.6.1100', 'Tb927.11.3980', 'Tb927.6.2630', 'Tb927.7.6560',
-        'Tb927.10.2810', 'Tb927.3.4350', 'Tb927.6.5000', 'Tb927.8.3480'
+        'Tb927.10.13980', 
+        'Tb927.10.15300', 
+        'Tb927.9.10660', 
+        'Tb927.8.3810', 
+        'Tb927.10.4720',
+        'Tb927.11.1940', 
+        'Tb927.4.980', 
+        'Tb927.10.1820', 
+        'Tb927.6.3660', 
+        'Tb927.1.3230',
+        'Tb927.6.1100', 
+        'Tb927.11.3980', 
+        'Tb927.6.2630', 
+        'Tb927.7.6560',
+        'Tb927.10.2810', 
+        'Tb927.3.4350', 
+        'Tb927.6.5000', 'Tb927.8.3480'
     ]
     
     sequences = {}
@@ -249,7 +262,7 @@ st.title('mono-trac')
 if 'results' not in st.session_state:
     page = st.sidebar.selectbox("", [""])
 else:
-    page = st.sidebar.selectbox("Results", ["Submit Country", "Prediction", "Verbose Working", "Nucleotide Counts", "Phylogenetic Tree", "Tool Versions"])
+    page = st.sidebar.selectbox("Results", ["Submit Country", "Prediction", "Verbose Working", "Nucleotide Counts", "Phylogenetic Tree", "Tool Versions", "Download"])
 
 # File uploader
 if 'results' not in st.session_state:
@@ -579,3 +592,10 @@ if page == "Tool Versions":
             tool_versions = get_tool_versions()
             tool_versions_df = pd.DataFrame(tool_versions.items(), columns=["Tool", "Version"])
             st.table(tool_versions_df)
+
+if page == "Download":
+            st.download_button(label="Download Report",
+                       data=PDFbyte,
+                       file_name = f'final_report.pdf',
+                       mime='application/octet-stream')
+  
