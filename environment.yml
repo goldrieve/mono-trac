@@ -1,8 +1,4 @@
-name: mono-trac
-channels:
-  - conda-forge
 dependencies:
-  - python=3.8
   - streamlit
   - pandas
   - matplotlib
@@ -17,3 +13,5 @@ dependencies:
   - scikit-learn
   - fasttree
   - mafft
+  - matplotlib.pyplot
+  - conda-forge::conda_subprocess
