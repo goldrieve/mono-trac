@@ -6,7 +6,7 @@ channels:
 dependencies:
   - streamlit
   - pandas
-  - matplotlib
+  - conda-forge::matplotlib
   - numpy
   - pydeck
   - joblib
